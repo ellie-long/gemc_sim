@@ -1,0 +1,7 @@
+<mfield>
+ <description name="q1_1.17591GeV" factory="ASCII" comment="RHRS Dipole Magnet"/> 
+ <symmetry type="quadrupole" format="simple" integration="RungeKutta"/>
+ <dimension bx="-0.4313" by="0" bz="0" units="T"/>
+</mfield>
+
+
