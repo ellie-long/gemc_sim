@@ -67,7 +67,8 @@ sub build_target_holding_field
 
 sub build_rhrs
 {
-	my $deg				= -12;
+#	my $deg				= -12;
+	my $deg				= 0;
 	my $rot				= -$deg;
 	my $r				= 1038;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -88,23 +89,22 @@ sub build_rhrs
 	$detector{"dimensions"} 	= "358.15*cm 518.5*cm 1038*cm";
 	$detector{"visible"}    	= 1;
 	$detector{"style"}      	= 0;
+	$detector{"mfield"}      	= "no";
 	print_det(\%configuration, \%detector);
 
-
-#	my %detector = init_det();
 	$detector{"name"}       	= "rdipole";
 	$detector{"mother"}     	= "rhrs";
-	$detector{"description"}	= "RHRS Dipole Magnet";
-	$detector{"pos"}        	= "0*cm -213.5*cm 293.3*cm";
+	$detector{"description"}	= "RHRS Dipole Magnet-P1";
+#	$detector{"pos"}        	= "0*cm -213.5*cm 293.3*cm";
+	$detector{"pos"}        	= "0*cm -117.38*cm 293.3*cm";
 	$detector{"rotation"}   	= "0*deg 0*deg 0*deg";
 	$detector{"color"}	        = "B0E0E6";
 	$detector{"type"}       	= "Box";
 	$detector{"dimensions"} 	= "107.63*cm 205*cm 381*cm";
+#	$detector{"dimensions"} 	= "107.63*cm 350*cm 381*cm";
 	$detector{"visible"}    	= 1;
 	$detector{"style"}      	= 1;
 	$detector{"mfield"}			= "dipole_1.17591GeV";
-#	$detector{"sensitivity"}	= "FLUX";
-#	$detector{"hit_type"}		= "FLUX";
 	print_det(\%configuration, \%detector);
 
 	$detector{"name"}       	= "rq1";
@@ -118,10 +118,46 @@ sub build_rhrs
 	$detector{"visible"}    	= 1;
 	$detector{"style"}      	= 1;
 	$detector{"mfield"}			= "q1_1.17591GeV";
-#	$detector{"sensitivity"}	= "FLUX";
-#	$detector{"hit_type"}		= "FLUX";
 	print_det(\%configuration, \%detector);
 
+	$detector{"name"}       	= "rq2";
+	$detector{"mother"}     	= "rhrs";
+	$detector{"description"}	= "RHRS Q2 Magnet";
+	$detector{"pos"}        	= "0*cm -213.5*cm -545*cm";
+	$detector{"rotation"}   	= "0*deg 0*deg 0*deg";
+	$detector{"color"}	        = "B0E0E6";
+	$detector{"type"}       	= "Tube";
+	$detector{"dimensions"} 	= "0*cm 74.93*cm 90*cm 0*deg 360*deg";
+	$detector{"visible"}    	= 1;
+	$detector{"style"}      	= 1;
+	$detector{"mfield"}			= "q2_1.17591GeV";
+	print_det(\%configuration, \%detector);
+
+	$detector{"name"}       	= "rq3";
+	$detector{"mother"}     	= "rhrs";
+	$detector{"description"}	= "RHRS Q2 Magnet";
+	$detector{"pos"}        	= "0*cm 202.42*cm 721.92*cm";
+	$detector{"rotation"}   	= "45*deg 0*deg 0*deg";
+	$detector{"color"}	        = "B0E0E6";
+	$detector{"type"}       	= "Tube";
+	$detector{"dimensions"} 	= "0*cm 74.93*cm 90*cm 0*deg 360*deg";
+	$detector{"visible"}    	= 1;
+	$detector{"style"}      	= 1;
+	$detector{"mfield"}			= "q3_1.17591GeV";
+	print_det(\%configuration, \%detector);
+
+	$detector{"name"}       	= "electron_det_package";
+	$detector{"mother"}     	= "root";
+	$detector{"description"}	= "Electron Detector Package";
+	$detector{"pos"}        	= $rhrs_placement;
+	$detector{"rotation"}   	= $rhrs_rotation;
+	$detector{"color"}	        = "B0E0E6";
+	$detector{"type"}       	= "Box";
+	$detector{"dimensions"} 	= "358.15*cm 518.5*cm 1038*cm";
+	$detector{"visible"}    	= 1;
+	$detector{"style"}      	= 0;
+	$detector{"mfield"}      	= "no";
+	print_det(\%configuration, \%detector);
 
 }
 
@@ -164,7 +200,7 @@ sub build_hand
 }
 
 
-build_hand();
+#build_hand();
 build_rhrs();
-build_target_holding_field();
-build_target_cell();
+#build_target_holding_field();
+#build_target_cell();

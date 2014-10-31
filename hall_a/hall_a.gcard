@@ -2,8 +2,8 @@
 	
 	<detector name="hall_a" factory="TEXT" variation="mine"/>
 	<field name="hall_a"/>
-	<option name="BEAM_P" value="e-, 1.245*GeV, 0*deg, 0*deg"/>
-	<!-- option name="BEAM_P" value="e-, 1.165*GeV, 0*deg, 0*deg"/ -->
+	<!-- option name="BEAM_P" value="e-, 1.245*GeV, 0*deg, 0*deg"/ -->
+	<option name="BEAM_P" value="e-, 1.165*GeV, 0*deg, 0*deg"/>
 	<option name="BEAM_V" value="(0, 0, -500)cm"/>
 	<option name="SPREAD_V" value="(2,-2)mm"/>
 	<option name="SPREAD_P" value="0.12*GeV, 0*deg, 0*deg"/>

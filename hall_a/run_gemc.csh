@@ -12,6 +12,6 @@ gemc \
 -EXEC_MACRO=g4_settings.config \
 -FIELD_DIR=./field \
 #-HALL_FIELD=halla_field \
-#-FIELD_VERBOSITY=1 \
+-FIELD_VERBOSITY=1 \
 
 
