@@ -1,7 +1,0 @@
-<mfield>
- <description name="3He_holding_field" factory="ASCII" comment="3He Target Holding Field"/>
- <symmetry type="uniform" format="simple" integration="ClassicalRK4"/>
- <dimension bx="0" by="100" bz="0" units="gauss"/>
-</mfield>
-
-

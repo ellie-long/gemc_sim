@@ -1,3 +1,0 @@
-halla_field1	uniform		0*T 5*T 0*T		0	Uniform 2T Magnetic Field along y-axis
-halla_field          uniform txt cylindrical        401 0 400  cm  1001  -400  600 cm 0 0 0 cm gauss        RungeKutta      solenoid_BaBar
-
