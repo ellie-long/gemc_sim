@@ -1,0 +1,2307 @@
+   Simulation Conditions, TAG 5:
+   > hall_a  is loaded with factory TEXT, variation mine and run number 1
+   > option ALIGN_ZAXIS no
+   > option ALLRAWS no
+   > option BANK_VERBOSITY 1
+   > option BEAM_P e-, 1.165*GeV, 0*deg, 0*deg
+   > option BEAM_V (0, 0, -500)cm
+   > option CATCH Maurizio
+   > option CHECK_OVERLAPS 0
+   > option DATABASE no
+   > option DAWN_N 0
+   > option DBHOST no
+   > option DBPORT 0
+   > option DBPSWD no
+   > option DBUSER gemc
+   > option DC_MSTAG_R2 0
+   > option DC_MSTAG_R3 0
+   > option DEFAULT_MATERIAL Vacuum
+   > option DF no
+   > option ENERGY_CUT -1
+   > option EVN 1
+   > option EXEC_MACRO g4_settings.config
+   > option FIELD_DIR ../database_io/field
+   > option FIELD_VERBOSITY 0
+   > option G4P_VERBOSITY 1
+   > option G4TRACK_VERBOSITY 0
+   > option GEN_VERBOSITY 0
+   > option GEO_VERBOSITY 1
+   > option GUIPOS (150, 150)
+   > option GUI_VERBOSITY 1
+   > option HALL_DIMENSIONS 20*m, 20*m, 20*m
+   > option HALL_FIELD no
+   > option HALL_MATERIAL Vacuum
+   > option HIGH_RES 1
+   > option HIT_PROCESS_LIST clas12
+   > option HIT_VERBOSITY 1
+   > option INPUT_GEN_FILE gemc_internal
+   > option INTEGRATEDDGT yes
+   > option INTEGRATEDRAW flux
+   > option LOG_VERBOSITY 0
+   > option LUMI2_EVENT 0, 2*ns
+   > option LUMI2_P proton, 50*GeV, 175*deg, 180*deg
+   > option LUMI2_SPREAD_P 0*GeV, 0*deg, 0*deg
+   > option LUMI2_SPREAD_V (0, 0)cm
+   > option LUMI2_V (4, 0, 50)cm
+   > option LUMI_EVENT 0, 0*ns, 2*ns
+   > option LUMI_P e-, 11*GeV, 0*deg, 0*deg
+   > option LUMI_SPREAD_P 0*GeV, 0*deg, 0*deg
+   > option LUMI_SPREAD_V (0, 0)cm
+   > option LUMI_V (0, 0, -20)cm
+   > option MATERIAL_VERBOSITY 0
+   > option MAX_FIELD_STEP 0
+   > option MAX_X_POS 20000
+   > option MAX_Y_POS 20000
+   > option MAX_Z_POS 20000
+   > option MERGE_FILE no
+   > option MIRROR_VERBOSITY 0
+   > option N 50
+   > option NGENP 10
+   > option NO_FIELD none
+   > option OUTPUT txt,test.txt
+   > option PARAMETER_VERBOSITY 0
+   > option PHYSICS QGSP_BERT + STD + Optical
+   > option PHYS_VERBOSITY 0
+   > option PHY_VERBOSITY 1
+   > option POLAR 100, 0*deg, 0*deg
+   > option PRINT_EVENT 1000
+   > option QTSTYLE no
+   > option RANDOM TIME
+   > option RECORD_MIRRORS 0
+   > option RECORD_PASSBY 0
+   > option RUNNO 1
+   > option SAVE_ALL_MOTHERS 0
+   > option SCALE_FIELD no, 1
+   > option SIGNALVT no
+   > option SPREAD_P 0.12*GeV, 0*deg, 0*deg
+   > option SPREAD_V (2,-2)mm
+   > option STEER_BEAM 0
+   > option USE_GUI 1
+   > option gcard hall_a.gcard
+   > option geometry 620x620
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:00
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	1
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1177.32) MeV   -  vert: (0.366228,1.71919,-5001.95) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:00
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	2
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1246.51	
+    - (51, 7) totEdep:	1.1294e-22	
+    - (51, 8) avg_x:	17.6391	
+    - (51, 9) avg_y:	8180.41	
+    - (51, 10) avg_z:	18038.1	
+    - (51, 11) avg_lx:	17.6391	
+    - (51, 12) avg_ly:	-2169.59	
+    - (51, 13) avg_lz:	2038.09	
+    - (51, 14) px:	-1.31051	
+    - (51, 15) py:	814.189	
+    - (51, 16) pz:	943.868	
+    - (51, 17) vx:	0.200578	
+    - (51, 18) vy:	-0.718513	
+    - (51, 19) vz:	-4999.7	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9634	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1252.98) MeV   -  vert: (0.200578,-0.718513,-4999.7) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	3
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1114.43	
+    - (51, 7) totEdep:	1.82952e-22	
+    - (51, 8) avg_x:	-157.928	
+    - (51, 9) avg_y:	8800.41	
+    - (51, 10) avg_z:	17516.8	
+    - (51, 11) avg_lx:	-157.928	
+    - (51, 12) avg_ly:	-1549.59	
+    - (51, 13) avg_lz:	1516.75	
+    - (51, 14) px:	-7.27694	
+    - (51, 15) py:	778.945	
+    - (51, 16) pz:	796.966	
+    - (51, 17) vx:	-1.14831	
+    - (51, 18) vy:	0.127036	
+    - (51, 19) vz:	-5000.19	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.886	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1243.66) MeV   -  vert: (-1.14831,0.127036,-5000.19) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	4
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	975.566	
+    - (51, 7) totEdep:	2.5719e-22	
+    - (51, 8) avg_x:	-57.8779	
+    - (51, 9) avg_y:	9582.18	
+    - (51, 10) avg_z:	17021.6	
+    - (51, 11) avg_lx:	-57.8779	
+    - (51, 12) avg_ly:	-767.817	
+    - (51, 13) avg_lz:	1021.61	
+    - (51, 14) px:	-2.32187	
+    - (51, 15) py:	722.242	
+    - (51, 16) pz:	655.813	
+    - (51, 17) vx:	-0.713527	
+    - (51, 18) vy:	-0.0573208	
+    - (51, 19) vz:	-4998.08	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.25	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1219.59) MeV   -  vert: (-0.713527,-0.0573208,-4998.08) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	5
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	867	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	455.49	
+    - (51, 7) totEdep:	1.58691e-22	
+    - (51, 8) avg_x:	-40.9022	
+    - (51, 9) avg_y:	11573.7	
+    - (51, 10) avg_z:	15717.8	
+    - (51, 11) avg_lx:	-40.9022	
+    - (51, 12) avg_ly:	1223.73	
+    - (51, 13) avg_lz:	-282.222	
+    - (51, 14) px:	-0.732005	
+    - (51, 15) py:	421.934	
+    - (51, 16) pz:	171.586	
+    - (51, 17) vx:	-14.2869	
+    - (51, 18) vy:	31.3653	
+    - (51, 19) vz:	8601.18	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	93.0222	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1160.72) MeV   -  vert: (-1.23372,-0.177783,-5001.39) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	6
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1138.48	
+    - (51, 7) totEdep:	1.70142e-22	
+    - (51, 8) avg_x:	138.132	
+    - (51, 9) avg_y:	8680.66	
+    - (51, 10) avg_z:	17607	
+    - (51, 11) avg_lx:	138.132	
+    - (51, 12) avg_ly:	-1669.34	
+    - (51, 13) avg_lz:	1607.03	
+    - (51, 14) px:	8.5928	
+    - (51, 15) py:	786.172	
+    - (51, 16) pz:	823.412	
+    - (51, 17) vx:	-0.440877	
+    - (51, 18) vy:	-0.479257	
+    - (51, 19) vz:	-5001.28	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9172	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1190.54) MeV   -  vert: (-0.440877,-0.479257,-5001.28) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	7
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	217	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	1063.32	1.56045	
+    - (51, 7) totEdep:	2.10461e-22	7.49983e-23	
+    - (51, 8) avg_x:	73.7219	-1669.46	
+    - (51, 9) avg_y:	9057.58	7574.84	
+    - (51, 10) avg_z:	17321.6	15945	
+    - (51, 11) avg_lx:	73.7219	-1669.46	
+    - (51, 12) avg_ly:	-1292.42	-2775.16	
+    - (51, 13) avg_lz:	1321.65	-55.0449	
+    - (51, 14) px:	1.7982	-1.41061	
+    - (51, 15) py:	758.188	0.238202	
+    - (51, 16) pz:	745.523	0.356836	
+    - (51, 17) vx:	1.37343	68.9317	
+    - (51, 18) vy:	0.409858	7129.02	
+    - (51, 19) vz:	-5001.23	15425.3	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	85.9191	83.5838	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1267.16) MeV   -  vert: (1.37343,0.409858,-5001.23) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	8
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1077.78) MeV   -  vert: (-0.586713,1.7025,-5001.37) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	9
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	917.028	
+    - (51, 7) totEdep:	2.63567e-22	
+    - (51, 8) avg_x:	126.001	
+    - (51, 9) avg_y:	10406	
+    - (51, 10) avg_z:	17043.9	
+    - (51, 11) avg_lx:	126.001	
+    - (51, 12) avg_ly:	55.9953	
+    - (51, 13) avg_lz:	1043.87	
+    - (51, 14) px:	5.00005	
+    - (51, 15) py:	700.144	
+    - (51, 16) pz:	592.211	
+    - (51, 17) vx:	-1.66444	
+    - (51, 18) vy:	0.954812	
+    - (51, 19) vz:	-5001.28	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	88.1972	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1113.1) MeV   -  vert: (-1.66444,0.954812,-5001.28) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	10
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1049.07	
+    - (51, 7) totEdep:	2.12369e-22	
+    - (51, 8) avg_x:	77.8117	
+    - (51, 9) avg_y:	9076.2	
+    - (51, 10) avg_z:	17306.4	
+    - (51, 11) avg_lx:	77.8117	
+    - (51, 12) avg_ly:	-1273.8	
+    - (51, 13) avg_lz:	1306.41	
+    - (51, 14) px:	3.61211	
+    - (51, 15) py:	748.692	
+    - (51, 16) pz:	734.851	
+    - (51, 17) vx:	-1.74335	
+    - (51, 18) vy:	0.694151	
+    - (51, 19) vz:	-4999.93	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8885	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1056.48) MeV   -  vert: (-1.74335,0.694151,-4999.93) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	11
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1017.91	
+    - (51, 7) totEdep:	2.39964e-22	
+    - (51, 8) avg_x:	152.639	
+    - (51, 9) avg_y:	9343.31	
+    - (51, 10) avg_z:	17122.6	
+    - (51, 11) avg_lx:	152.639	
+    - (51, 12) avg_ly:	-1006.69	
+    - (51, 13) avg_lz:	1122.57	
+    - (51, 14) px:	3.41201	
+    - (51, 15) py:	740.853	
+    - (51, 16) pz:	698.04	
+    - (51, 17) vx:	-0.657258	
+    - (51, 18) vy:	0.250677	
+    - (51, 19) vz:	-5001.37	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.918	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1054.65) MeV   -  vert: (-0.657258,0.250677,-5001.37) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	12
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1239.16	
+    - (51, 7) totEdep:	1.11349e-22	
+    - (51, 8) avg_x:	-7.42557	
+    - (51, 9) avg_y:	8169.66	
+    - (51, 10) avg_z:	18051.8	
+    - (51, 11) avg_lx:	-7.42557	
+    - (51, 12) avg_ly:	-2180.34	
+    - (51, 13) avg_lz:	2051.78	
+    - (51, 14) px:	-0.925022	
+    - (51, 15) py:	809.988	
+    - (51, 16) pz:	937.782	
+    - (51, 17) vx:	1.81112	
+    - (51, 18) vy:	0.133207	
+    - (51, 19) vz:	-4999.37	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.0067	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1283.81) MeV   -  vert: (1.81112,0.133207,-4999.37) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	13
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1181.88) MeV   -  vert: (-1.70843,-0.0955609,-5001.48) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	14
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1057.8	
+    - (51, 7) totEdep:	2.13109e-22	
+    - (51, 8) avg_x:	-206.691	
+    - (51, 9) avg_y:	9080.44	
+    - (51, 10) avg_z:	17300.8	
+    - (51, 11) avg_lx:	-206.691	
+    - (51, 12) avg_ly:	-1269.56	
+    - (51, 13) avg_lz:	1300.76	
+    - (51, 14) px:	-7.34466	
+    - (51, 15) py:	754.583	
+    - (51, 16) pz:	741.282	
+    - (51, 17) vx:	1.68644	
+    - (51, 18) vy:	-0.502398	
+    - (51, 19) vz:	-5000.37	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8318	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1118.58) MeV   -  vert: (1.68644,-0.502398,-5000.37) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	15
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	221	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	1067.9	1.10358	
+    - (51, 7) totEdep:	1.59531e-22	7.66749e-23	
+    - (51, 8) avg_x:	-288.313	-2019.27	
+    - (51, 9) avg_y:	8585.62	8167.53	
+    - (51, 10) avg_z:	17671.7	15431.9	
+    - (51, 11) avg_lx:	-288.313	-2019.27	
+    - (51, 12) avg_ly:	-1764.38	-2182.47	
+    - (51, 13) avg_lz:	1671.68	-568.122	
+    - (51, 14) px:	-14.2239	-0.731985	
+    - (51, 15) py:	727.065	0.609714	
+    - (51, 16) pz:	782.041	0.221847	
+    - (51, 17) vx:	1.14933	-225.484	
+    - (51, 18) vy:	-0.840436	5265.84	
+    - (51, 19) vz:	-5001.49	14096.3	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	85.7187	83.4531	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1190.7) MeV   -  vert: (1.14933,-0.840436,-5001.49) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	16
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	887.688	
+    - (51, 7) totEdep:	2.08399e-22	
+    - (51, 8) avg_x:	-4.17013	
+    - (51, 9) avg_y:	9093.25	
+    - (51, 10) avg_z:	17349.2	
+    - (51, 11) avg_lx:	-4.17013	
+    - (51, 12) avg_ly:	-1256.75	
+    - (51, 13) avg_lz:	1349.15	
+    - (51, 14) px:	2.94238	
+    - (51, 15) py:	644.409	
+    - (51, 16) pz:	610.506	
+    - (51, 17) vx:	0.11809	
+    - (51, 18) vy:	-0.959361	
+    - (51, 19) vz:	-4999.31	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.2984	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1164.5) MeV   -  vert: (0.11809,-0.959361,-4999.31) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	17
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1140.47) MeV   -  vert: (1.61283,-0.796794,-5000.89) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	18
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1107.26	
+    - (51, 7) totEdep:	1.85273e-22	
+    - (51, 8) avg_x:	-309.959	
+    - (51, 9) avg_y:	8822.92	
+    - (51, 10) avg_z:	17500.8	
+    - (51, 11) avg_lx:	-309.959	
+    - (51, 12) avg_ly:	-1527.08	
+    - (51, 13) avg_lz:	1500.82	
+    - (51, 14) px:	-13.7967	
+    - (51, 15) py:	775.758	
+    - (51, 16) pz:	789.962	
+    - (51, 17) vx:	0.979265	
+    - (51, 18) vy:	0.777215	
+    - (51, 19) vz:	-5001.51	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9431	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1200.16) MeV   -  vert: (0.979265,0.777215,-5001.51) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	19
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	262	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	650.041	1.24499	
+    - (51, 7) totEdep:	4.21701e-23	5.78641e-23	
+    - (51, 8) avg_x:	37.9995	-672.19	
+    - (51, 9) avg_y:	12904.4	12903.8	
+    - (51, 10) avg_z:	14462.3	14845.8	
+    - (51, 11) avg_lx:	37.9995	-672.19	
+    - (51, 12) avg_ly:	2554.41	2553.77	
+    - (51, 13) avg_lz:	-1537.65	-1154.22	
+    - (51, 14) px:	1.97029	-0.779105	
+    - (51, 15) py:	583.763	0.492147	
+    - (51, 16) pz:	285.955	0.663075	
+    - (51, 17) vx:	-0.536185	36.4864	
+    - (51, 18) vy:	1.33989	12456.1	
+    - (51, 19) vz:	-4999.43	14242.7	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	89.5255	91.6376	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1209.91) MeV   -  vert: (-0.536185,1.33989,-4999.43) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:01
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	20
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1220.93	
+    - (51, 7) totEdep:	1.33635e-22	
+    - (51, 8) avg_x:	675.957	
+    - (51, 9) avg_y:	8362.91	
+    - (51, 10) avg_z:	17886.6	
+    - (51, 11) avg_lx:	675.957	
+    - (51, 12) avg_ly:	-1987.09	
+    - (51, 13) avg_lz:	1886.56	
+    - (51, 14) px:	33.5021	
+    - (51, 15) py:	820.99	
+    - (51, 16) pz:	903.065	
+    - (51, 17) vx:	-0.0514316	
+    - (51, 18) vy:	-1.96471	
+    - (51, 19) vz:	-5000.06	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.1553	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1257.32) MeV   -  vert: (-0.0514316,-1.96471,-5000.06) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	21
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	988.05	
+    - (51, 7) totEdep:	2.47011e-22	
+    - (51, 8) avg_x:	263.715	
+    - (51, 9) avg_y:	9420.92	
+    - (51, 10) avg_z:	17079.6	
+    - (51, 11) avg_lx:	263.715	
+    - (51, 12) avg_ly:	-929.077	
+    - (51, 13) avg_lz:	1079.63	
+    - (51, 14) px:	13.1659	
+    - (51, 15) py:	724.312	
+    - (51, 16) pz:	671.894	
+    - (51, 17) vx:	1.15406	
+    - (51, 18) vy:	-1.62949	
+    - (51, 19) vz:	-5001.27	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.064	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1045.47) MeV   -  vert: (1.15406,-1.62949,-5001.27) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	22
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1196.4	
+    - (51, 7) totEdep:	1.34636e-22	
+    - (51, 8) avg_x:	7.05139	
+    - (51, 9) avg_y:	8367.43	
+    - (51, 10) avg_z:	17871.8	
+    - (51, 11) avg_lx:	7.05139	
+    - (51, 12) avg_ly:	-1982.57	
+    - (51, 13) avg_lz:	1871.83	
+    - (51, 14) px:	4.63608	
+    - (51, 15) py:	800.953	
+    - (51, 16) pz:	888.718	
+    - (51, 17) vx:	-1.31455	
+    - (51, 18) vy:	0.280067	
+    - (51, 19) vz:	-5001.06	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9448	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1262.82) MeV   -  vert: (-1.31455,0.280067,-5001.06) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	23
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	916.463	
+    - (51, 7) totEdep:	2.3991e-22	
+    - (51, 8) avg_x:	36.2335	
+    - (51, 9) avg_y:	9380.09	
+    - (51, 10) avg_z:	17133.5	
+    - (51, 11) avg_lx:	36.2335	
+    - (51, 12) avg_ly:	-969.909	
+    - (51, 13) avg_lz:	1133.47	
+    - (51, 14) px:	2.88471	
+    - (51, 15) py:	674.529	
+    - (51, 16) pz:	620.407	
+    - (51, 17) vx:	-1.93668	
+    - (51, 18) vy:	-0.167929	
+    - (51, 19) vz:	-5001.4	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.2638	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1095.19) MeV   -  vert: (-1.93668,-0.167929,-5001.4) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	24
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	245	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	1058.15	0.629881	
+    - (51, 7) totEdep:	2.13778e-22	3.63571e-22	
+    - (51, 8) avg_x:	28.0396	13.6672	
+    - (51, 9) avg_y:	9093.41	10350.5	
+    - (51, 10) avg_z:	17303.1	15539.2	
+    - (51, 11) avg_lx:	28.0396	13.6672	
+    - (51, 12) avg_ly:	-1256.59	0.498593	
+    - (51, 13) avg_lz:	1303.12	-460.799	
+    - (51, 14) px:	2.10598	-0.00124031	
+    - (51, 15) py:	758.12	0.367256	
+    - (51, 16) pz:	738.187	0.0274224	
+    - (51, 17) vx:	-1.17647	22.5394	
+    - (51, 18) vy:	0.658272	7142.4	
+    - (51, 19) vz:	-4998.01	15403.3	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	85.97	95.2742	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1085.87) MeV   -  vert: (-1.17647,0.658272,-4998.01) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	25
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	287.679	
+    - (51, 7) totEdep:	1.74467e-22	
+    - (51, 8) avg_x:	170.985	
+    - (51, 9) avg_y:	8881.67	
+    - (51, 10) avg_z:	17445.2	
+    - (51, 11) avg_lx:	170.985	
+    - (51, 12) avg_ly:	-1468.33	
+    - (51, 13) avg_lz:	1445.2	
+    - (51, 14) px:	2.19793	
+    - (51, 15) py:	201.837	
+    - (51, 16) pz:	204.978	
+    - (51, 17) vx:	-1.47475	
+    - (51, 18) vy:	-0.155796	
+    - (51, 19) vz:	-5000.96	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.7634	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1130.12) MeV   -  vert: (-1.47475,-0.155796,-5000.96) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	26
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1270.93) MeV   -  vert: (0.322874,0.000939187,-4998.08) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	27
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1088.77	
+    - (51, 7) totEdep:	1.95959e-22	
+    - (51, 8) avg_x:	11.3134	
+    - (51, 9) avg_y:	8928	
+    - (51, 10) avg_z:	17430.4	
+    - (51, 11) avg_lx:	11.3134	
+    - (51, 12) avg_ly:	-1422	
+    - (51, 13) avg_lz:	1430.44	
+    - (51, 14) px:	-0.818545	
+    - (51, 15) py:	771.764	
+    - (51, 16) pz:	767.984	
+    - (51, 17) vx:	-0.892121	
+    - (51, 18) vy:	1.19218	
+    - (51, 19) vz:	-4998.85	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9198	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1094.88) MeV   -  vert: (-0.892121,1.19218,-4998.85) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	28
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1219.12	
+    - (51, 7) totEdep:	1.25959e-22	
+    - (51, 8) avg_x:	-54.9731	
+    - (51, 9) avg_y:	8291.14	
+    - (51, 10) avg_z:	17937.4	
+    - (51, 11) avg_lx:	-54.9731	
+    - (51, 12) avg_ly:	-2058.86	
+    - (51, 13) avg_lz:	1937.44	
+    - (51, 14) px:	-5.5754	
+    - (51, 15) py:	807.998	
+    - (51, 16) pz:	912.885	
+    - (51, 17) vx:	0.558969	
+    - (51, 18) vy:	-0.342441	
+    - (51, 19) vz:	-4998.83	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9474	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1243.45) MeV   -  vert: (0.558969,-0.342441,-4998.83) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	29
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	11	-11	11	
+    - (51, 2) mpid:	0	0	0	0	0	
+    - (51, 3) tid:	1	409	412	410	716	
+    - (51, 4) mtid:	0	0	0	0	0	
+    - (51, 5) otid:	0	0	0	0	0	
+    - (51, 6) trackE:	531.289	109.452	2.51699	2.57219	0.567712	
+    - (51, 7) totEdep:	3.27577e-23	2.69527e-23	5.63753e-23	2.91251e-23	5.2728e-22	
+    - (51, 8) avg_x:	571.017	569.438	798.832	1072.75	2195.99	
+    - (51, 9) avg_y:	12996.5	13018.3	12493.4	12905.1	12472.8	
+    - (51, 10) avg_z:	14328.3	14289.7	15176.4	14463.8	14857.2	
+    - (51, 11) avg_lx:	571.017	569.438	798.832	1072.75	2195.99	
+    - (51, 12) avg_ly:	2646.53	2668.33	2143.4	2555.08	2122.77	
+    - (51, 13) avg_lz:	-1671.7	-1710.26	-823.562	-1536.18	-1142.79	
+    - (51, 14) px:	10.5245	1.41449	0.207617	1.04892	0.192325	
+    - (51, 15) py:	480.3	99.8695	1.99516	2.05411	0.118263	
+    - (51, 16) pz:	226.869	44.7604	1.43189	1.01757	0.101003	
+    - (51, 17) vx:	-0.641496	523.384	526.857	523.384	545.54	
+    - (51, 18) vy:	-1.79568	10584.8	10761.8	10584.8	10680.5	
+    - (51, 19) vz:	-5001.16	13183.1	13267.5	13183.1	13230	
+    - (51, 20) mvx:	0	0	0	0	0	
+    - (51, 21) mvy:	0	0	0	0	0	
+    - (51, 22) mvz:	0	0	0	0	0	
+    - (51, 23) avg_t:	89.6497	89.6618	90.4029	90.061	106.418	
+    - (51, 99) hitn:	1	2	3	4	5	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	102	102	102	
+    - (52, 99) hitn:	1	2	3	4	5	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1068.31) MeV   -  vert: (-0.641496,-1.79568,-5001.16) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	30
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	217	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	1078.1	11.1039	
+    - (51, 7) totEdep:	1.85918e-22	2.0717e-22	
+    - (51, 8) avg_x:	-99.1506	646.389	
+    - (51, 9) avg_y:	8829.78	10279.9	
+    - (51, 10) avg_z:	17491.7	17239	
+    - (51, 11) avg_lx:	-99.1506	646.389	
+    - (51, 12) avg_ly:	-1520.22	-70.0857	
+    - (51, 13) avg_lz:	1491.67	1239.03	
+    - (51, 14) px:	-7.18175	1.23373	
+    - (51, 15) py:	754.817	9.44739	
+    - (51, 16) pz:	769.746	5.67984	
+    - (51, 17) vx:	-0.964457	-70.2777	
+    - (51, 18) vy:	-0.996178	5813.45	
+    - (51, 19) vz:	-4999.45	14416.5	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	85.8805	89.3384	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1110.76) MeV   -  vert: (-0.964457,-0.996178,-4999.45) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	31
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1010.4	
+    - (51, 7) totEdep:	2.46883e-22	
+    - (51, 8) avg_x:	-198.008	
+    - (51, 9) avg_y:	9426.65	
+    - (51, 10) avg_z:	17094.2	
+    - (51, 11) avg_lx:	-198.008	
+    - (51, 12) avg_ly:	-923.35	
+    - (51, 13) avg_lz:	1094.2	
+    - (51, 14) px:	-7.3875	
+    - (51, 15) py:	744.285	
+    - (51, 16) pz:	683.294	
+    - (51, 17) vx:	-1.58385	
+    - (51, 18) vy:	-0.388313	
+    - (51, 19) vz:	-5000.7	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.1782	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1099.53) MeV   -  vert: (-1.58385,-0.388313,-5000.7) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	32
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1183.87	
+    - (51, 7) totEdep:	1.44043e-22	
+    - (51, 8) avg_x:	68.1868	
+    - (51, 9) avg_y:	8444.11	
+    - (51, 10) avg_z:	17796.5	
+    - (51, 11) avg_lx:	68.1868	
+    - (51, 12) avg_ly:	-1905.89	
+    - (51, 13) avg_lz:	1796.46	
+    - (51, 14) px:	2.57565	
+    - (51, 15) py:	796.082	
+    - (51, 16) pz:	876.245	
+    - (51, 17) vx:	-0.676385	
+    - (51, 18) vy:	0.57409	
+    - (51, 19) vz:	-5001.59	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8269	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1219.84) MeV   -  vert: (-0.676385,0.57409,-5001.59) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	33
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1066.44) MeV   -  vert: (0.760158,-0.283684,-4998.46) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	34
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1276.77	
+    - (51, 7) totEdep:	9.78481e-23	
+    - (51, 8) avg_x:	-6.82485	
+    - (51, 9) avg_y:	8059.75	
+    - (51, 10) avg_z:	18160.7	
+    - (51, 11) avg_lx:	-6.82485	
+    - (51, 12) avg_ly:	-2290.25	
+    - (51, 13) avg_lz:	2160.75	
+    - (51, 14) px:	-3.62898	
+    - (51, 15) py:	824.017	
+    - (51, 16) pz:	975.26	
+    - (51, 17) vx:	0.820045	
+    - (51, 18) vy:	-0.671686	
+    - (51, 19) vz:	-4999.35	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.0917	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1283.24) MeV   -  vert: (0.820045,-0.671686,-4999.35) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	35
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1129.6	
+    - (51, 7) totEdep:	1.71556e-22	
+    - (51, 8) avg_x:	25.6012	
+    - (51, 9) avg_y:	8691.8	
+    - (51, 10) avg_z:	17594	
+    - (51, 11) avg_lx:	25.6012	
+    - (51, 12) avg_ly:	-1658.2	
+    - (51, 13) avg_lz:	1594.01	
+    - (51, 14) px:	-0.986614	
+    - (51, 15) py:	779.664	
+    - (51, 16) pz:	817.381	
+    - (51, 17) vx:	0.977744	
+    - (51, 18) vy:	1.41863	
+    - (51, 19) vz:	-5001.55	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8394	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1200.23) MeV   -  vert: (0.977744,1.41863,-5001.55) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	36
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	11	
+    - (51, 2) mpid:	0	0	
+    - (51, 3) tid:	1	252	
+    - (51, 4) mtid:	0	0	
+    - (51, 5) otid:	0	0	
+    - (51, 6) trackE:	755.645	3.47885	
+    - (51, 7) totEdep:	1.85367e-22	1.33962e-22	
+    - (51, 8) avg_x:	-147.139	659.552	
+    - (51, 9) avg_y:	11575.4	10786.8	
+    - (51, 10) avg_z:	16225.5	17019.6	
+    - (51, 11) avg_lx:	-147.139	659.552	
+    - (51, 12) avg_ly:	1225.38	436.784	
+    - (51, 13) avg_lz:	225.474	1019.63	
+    - (51, 14) px:	-6.38129	0.842721	
+    - (51, 15) py:	620.978	1.87769	
+    - (51, 16) pz:	430.518	2.75779	
+    - (51, 17) vx:	1.44519	-121.559	
+    - (51, 18) vy:	1.34395	9102.04	
+    - (51, 19) vz:	-5001.18	14510.7	
+    - (51, 20) mvx:	0	0	
+    - (51, 21) mvy:	0	0	
+    - (51, 22) mvz:	0	0	
+    - (51, 23) avg_t:	89.2904	89.7801	
+    - (51, 99) hitn:	1	2	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	102	
+    - (52, 99) hitn:	1	2	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1218.65) MeV   -  vert: (1.44519,1.34395,-5001.18) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:02
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	37
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1064.11	
+    - (51, 7) totEdep:	2.11227e-22	
+    - (51, 8) avg_x:	52.7155	
+    - (51, 9) avg_y:	9067.49	
+    - (51, 10) avg_z:	17319.5	
+    - (51, 11) avg_lx:	52.7155	
+    - (51, 12) avg_ly:	-1282.51	
+    - (51, 13) avg_lz:	1319.49	
+    - (51, 14) px:	2.63057	
+    - (51, 15) py:	760.425	
+    - (51, 16) pz:	744.361	
+    - (51, 17) vx:	-0.0378812	
+    - (51, 18) vy:	0.57609	
+    - (51, 19) vz:	-4999.54	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9378	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1070.3) MeV   -  vert: (-0.0378812,0.57609,-4999.54) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	38
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1253.2	
+    - (51, 7) totEdep:	1.07948e-22	
+    - (51, 8) avg_x:	-128.04	
+    - (51, 9) avg_y:	8139.56	
+    - (51, 10) avg_z:	18077.7	
+    - (51, 11) avg_lx:	-128.04	
+    - (51, 12) avg_ly:	-2210.44	
+    - (51, 13) avg_lz:	2077.65	
+    - (51, 14) px:	-4.92011	
+    - (51, 15) py:	814.572	
+    - (51, 16) pz:	952.346	
+    - (51, 17) vx:	-0.124574	
+    - (51, 18) vy:	0.694277	
+    - (51, 19) vz:	-4999.77	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	86.0017	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1259.81) MeV   -  vert: (-0.124574,0.694277,-4999.77) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	39
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	705.716	
+    - (51, 7) totEdep:	9.49429e-23	
+    - (51, 8) avg_x:	-58.2191	
+    - (51, 9) avg_y:	12384.2	
+    - (51, 10) avg_z:	15182	
+    - (51, 11) avg_lx:	-58.2191	
+    - (51, 12) avg_ly:	2034.17	
+    - (51, 13) avg_lz:	-818.025	
+    - (51, 14) px:	1.71364	
+    - (51, 15) py:	613.392	
+    - (51, 16) pz:	348.973	
+    - (51, 17) vx:	-0.676316	
+    - (51, 18) vy:	1.26599	
+    - (51, 19) vz:	-4999.26	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	89.352	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1204.48) MeV   -  vert: (-0.676316,1.26599,-4999.26) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	40
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1035.42	
+    - (51, 7) totEdep:	2.15955e-22	
+    - (51, 8) avg_x:	-224.119	
+    - (51, 9) avg_y:	9093.26	
+    - (51, 10) avg_z:	17262.5	
+    - (51, 11) avg_lx:	-224.119	
+    - (51, 12) avg_ly:	-1256.74	
+    - (51, 13) avg_lz:	1262.5	
+    - (51, 14) px:	-8.53803	
+    - (51, 15) py:	733.189	
+    - (51, 16) pz:	731.063	
+    - (51, 17) vx:	1.6955	
+    - (51, 18) vy:	-0.988899	
+    - (51, 19) vz:	-5000.69	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.5468	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1099.35) MeV   -  vert: (1.6955,-0.988899,-5000.69) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	41
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1051.07	
+    - (51, 7) totEdep:	2.21901e-22	
+    - (51, 8) avg_x:	-17.1447	
+    - (51, 9) avg_y:	9168.84	
+    - (51, 10) avg_z:	17246.4	
+    - (51, 11) avg_lx:	-17.1447	
+    - (51, 12) avg_ly:	-1181.16	
+    - (51, 13) avg_lz:	1246.43	
+    - (51, 14) px:	-1.1601	
+    - (51, 15) py:	756.529	
+    - (51, 16) pz:	729.667	
+    - (51, 17) vx:	-0.036349	
+    - (51, 18) vy:	1.07474	
+    - (51, 19) vz:	-4998.6	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9146	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1057.4) MeV   -  vert: (-0.036349,1.07474,-4998.6) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	42
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1204.43	
+    - (51, 7) totEdep:	1.37619e-22	
+    - (51, 8) avg_x:	42.5784	
+    - (51, 9) avg_y:	8386.92	
+    - (51, 10) avg_z:	17845	
+    - (51, 11) avg_lx:	42.5784	
+    - (51, 12) avg_ly:	-1963.08	
+    - (51, 13) avg_lz:	1845.03	
+    - (51, 14) px:	2.47999	
+    - (51, 15) py:	804.34	
+    - (51, 16) pz:	896.49	
+    - (51, 17) vx:	1.25504	
+    - (51, 18) vy:	-0.177034	
+    - (51, 19) vz:	-4999.41	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8404	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1225.14) MeV   -  vert: (1.25504,-0.177034,-4999.41) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	43
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1081.88) MeV   -  vert: (0.304057,-1.46328,-5001.32) mm
+ --- End of Generated Particles Bank -- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	44
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1121.37	
+    - (51, 7) totEdep:	1.79475e-22	
+    - (51, 8) avg_x:	60.7318	
+    - (51, 9) avg_y:	8766.81	
+    - (51, 10) avg_z:	17540.3	
+    - (51, 11) avg_lx:	60.7318	
+    - (51, 12) avg_ly:	-1583.19	
+    - (51, 13) avg_lz:	1540.26	
+    - (51, 14) px:	4.32055	
+    - (51, 15) py:	780.808	
+    - (51, 16) pz:	804.86	
+    - (51, 17) vx:	-0.711067	
+    - (51, 18) vy:	1.67313	
+    - (51, 19) vz:	-4999.7	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8791	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1224.86) MeV   -  vert: (-0.711067,1.67313,-4999.7) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	45
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1195.19	
+    - (51, 7) totEdep:	1.41499e-22	
+    - (51, 8) avg_x:	-17.9023	
+    - (51, 9) avg_y:	8420.44	
+    - (51, 10) avg_z:	17815.2	
+    - (51, 11) avg_lx:	-17.9023	
+    - (51, 12) avg_ly:	-1929.56	
+    - (51, 13) avg_lz:	1815.19	
+    - (51, 14) px:	-0.364527	
+    - (51, 15) py:	800.964	
+    - (51, 16) pz:	887.092	
+    - (51, 17) vx:	1.26554	
+    - (51, 18) vy:	-0.558334	
+    - (51, 19) vz:	-4999.42	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8245	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1201.61) MeV   -  vert: (1.26554,-0.558334,-4999.42) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	46
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1189.77	
+    - (51, 7) totEdep:	1.42123e-22	
+    - (51, 8) avg_x:	63.0383	
+    - (51, 9) avg_y:	8433.56	
+    - (51, 10) avg_z:	17816.9	
+    - (51, 11) avg_lx:	63.0383	
+    - (51, 12) avg_ly:	-1916.44	
+    - (51, 13) avg_lz:	1816.93	
+    - (51, 14) px:	4.76866	
+    - (51, 15) py:	803.308	
+    - (51, 16) pz:	877.626	
+    - (51, 17) vx:	-1.28064	
+    - (51, 18) vy:	-0.131683	
+    - (51, 19) vz:	-4999.58	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.9335	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1203.78) MeV   -  vert: (-1.28064,-0.131683,-4999.58) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	47
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1110.71	
+    - (51, 7) totEdep:	1.82847e-22	
+    - (51, 8) avg_x:	77.3551	
+    - (51, 9) avg_y:	8794.61	
+    - (51, 10) avg_z:	17512	
+    - (51, 11) avg_lx:	77.3551	
+    - (51, 12) avg_ly:	-1555.39	
+    - (51, 13) avg_lz:	1512.05	
+    - (51, 14) px:	1.87511	
+    - (51, 15) py:	773.501	
+    - (51, 16) pz:	797.094	
+    - (51, 17) vx:	0.452659	
+    - (51, 18) vy:	-0.774327	
+    - (51, 19) vz:	-4998.16	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8168	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1119.61) MeV   -  vert: (0.452659,-0.774327,-4998.16) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	48
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1066.31	
+    - (51, 7) totEdep:	2.11149e-22	
+    - (51, 8) avg_x:	30.0474	
+    - (51, 9) avg_y:	9057.58	
+    - (51, 10) avg_z:	17311.2	
+    - (51, 11) avg_lx:	30.0474	
+    - (51, 12) avg_ly:	-1292.42	
+    - (51, 13) avg_lz:	1311.18	
+    - (51, 14) px:	3.00395	
+    - (51, 15) py:	757.987	
+    - (51, 16) pz:	749.971	
+    - (51, 17) vx:	1.49542	
+    - (51, 18) vy:	-1.24828	
+    - (51, 19) vz:	-4999.34	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8431	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1072.52) MeV   -  vert: (1.49542,-1.24828,-4999.34) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	49
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	651.836	
+    - (51, 7) totEdep:	2.22478e-22	
+    - (51, 8) avg_x:	-27.2874	
+    - (51, 9) avg_y:	11188.7	
+    - (51, 10) avg_z:	16552.8	
+    - (51, 11) avg_lx:	-27.2874	
+    - (51, 12) avg_ly:	838.733	
+    - (51, 13) avg_lz:	552.78	
+    - (51, 14) px:	-1.37561	
+    - (51, 15) py:	537.837	
+    - (51, 16) pz:	368.265	
+    - (51, 17) vx:	1.61459	
+    - (51, 18) vy:	-0.379237	
+    - (51, 19) vz:	-4998.87	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	89.7153	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1103.07) MeV   -  vert: (1.61459,-0.379237,-4998.87) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 
+ --- Header Bank -- 
+    - (10, 1) time:	Fri, 01.30.2015 14:52:03
+    - (10, 4) beamPol:	0
+    - (10, 2) evn:	50
+    - (10, 3) evn_type:	-1
+    - (10, 5) var1:	0
+    - (10, 6) var2:	0
+    - (10, 7) var3:	0
+    - (10, 8) var4:	0
+    - (10, 9) var5:	0
+    - (10, 10) var6:	0
+    - (10, 11) var7:	0
+    - (10, 12) var8:	0
+ --- End of Header Bank -- 
+ --- flux  (50, 0) ---- 
+   -- integrated true infos bank  (51, 0) -- 
+    - (51, 1) pid:	11	
+    - (51, 2) mpid:	0	
+    - (51, 3) tid:	1	
+    - (51, 4) mtid:	0	
+    - (51, 5) otid:	0	
+    - (51, 6) trackE:	1130.06	
+    - (51, 7) totEdep:	1.73819e-22	
+    - (51, 8) avg_x:	216.399	
+    - (51, 9) avg_y:	8713.29	
+    - (51, 10) avg_z:	17579.3	
+    - (51, 11) avg_lx:	216.399	
+    - (51, 12) avg_ly:	-1636.71	
+    - (51, 13) avg_lz:	1579.27	
+    - (51, 14) px:	10.037	
+    - (51, 15) py:	782.18	
+    - (51, 16) pz:	815.549	
+    - (51, 17) vx:	1.86124	
+    - (51, 18) vy:	-0.575775	
+    - (51, 19) vz:	-5001.68	
+    - (51, 20) mvx:	0	
+    - (51, 21) mvy:	0	
+    - (51, 22) mvz:	0	
+    - (51, 23) avg_t:	85.8568	
+    - (51, 99) hitn:	1	
+   -- end of integrated raw bank.
+   -- integrated digitized bank  (52, 0) -- 
+    - (52, 1) id:	102	
+    - (52, 99) hitn:	1	
+   -- End of integrated digitized bank.
+ --- Generated Particles Bank -- 
+    - Particle 1 pid: 11   -  mom: (0,0,1186.41) MeV   -  vert: (1.86124,-0.575775,-5001.68) mm
+    - Hit >na< Has 0 hit --- End of Generated Particles Bank -- 
+ ---- End of Event  ---- 

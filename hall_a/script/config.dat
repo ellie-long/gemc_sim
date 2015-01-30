@@ -1,0 +1,20 @@
+# Configuration file
+
+# Detector name and variation
+detector_name: hall_a
+variation:     mine
+
+# Factory can be MYQL or TEXT
+factory:       TEXT 
+
+# run ranges and variation will apply to geometry, materials and parameters
+rmin:       1
+rmax:       10000
+
+# Comments/Description
+comment:       Trying to make a simplified Hall A model
+
+# Verbosity controls the perl script output
+verbosity: 1
+
+
