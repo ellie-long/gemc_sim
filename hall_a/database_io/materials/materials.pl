@@ -4,6 +4,7 @@ use strict;
 use lib ("$ENV{GEMC}/io");
 use utils;
 use materials;
+use mirrors;
 
 # Help Message
 sub help()
@@ -47,12 +48,14 @@ sub define_3HeCell
 	$mat{"density"}       = "0.8344";  # in g/cm3 at 0.64 MPa
 #	$mat{"density"}       = "0.0001345";  # in g/cm3 at 1 atm
 	$mat{"ncomponents"}   = "1";
-	$mat{"components"}    = "He 2";
+#	$mat{"components"}    = "He 2";
 #	$mat{"components"}    = "helium3Gas 2";
-#	$mat{"components"}    = "helium3Gas 1";
+	$mat{"components"}    = "helium3Gas 1";
 	print_mat(\%configuration, \%mat);
 }
 
+
+
+
 define_scintillator();
 define_3HeCell();
-
