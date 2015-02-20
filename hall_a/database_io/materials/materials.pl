@@ -39,6 +39,18 @@ sub define_scintillator
 	print_mat(\%configuration, \%mat);
 }
 
+sub define_co2
+{
+	# Carbon Dioxide
+	my %mat = init_mat();
+	$mat{"name"}          = "CO2";
+	$mat{"description"}   = "Carbon Dioxide at 1 atm";
+	$mat{"density"}       = "0.001977";  # in g/cm3
+	$mat{"ncomponents"}   = "2";
+	$mat{"components"}    = "C 1 O 2";
+	print_mat(\%configuration, \%mat);
+}
+
 sub define_3HeCell
 {
 	# 3He Target Cell
