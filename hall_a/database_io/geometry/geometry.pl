@@ -78,20 +78,22 @@ sub build_beampipe
 	$beampipe{"material"}    = "G4_Pb";
 	$beampipe{"visible"}     = 1;
 	$beampipe{"style"}       = 1;
-	print_det(\%configuration, \%beampipe);
+#	print_det(\%configuration, \%beampipe);
 
 	my %beampipevac = init_det();
 	$beampipevac{"name"}        = "beampipevac";
 	$beampipevac{"mother"}      = "hall_a";
 	$beampipevac{"description"} = "Beam Pipe Vacuum";
-	$beampipevac{"pos"}         = "0*cm 0*cm 550*cm";
-	$beampipevac{"rotation"}    = "0*deg 0*deg 0*deg";
+#	$beampipevac{"pos"}         = "0*cm 0*cm 550*cm";
+#	$beampipevac{"rotation"}    = "0*deg 0*deg 0*deg";
+	$beampipevac{"pos"}         = "114.3514*cm 0*cm 537.98118*cm";
+	$beampipevac{"rotation"}    = "0*deg -17*deg 0*deg";
 	$beampipevac{"color"}       = "888888";
 	$beampipevac{"type"}        = "Tube";
 	$beampipevac{"dimensions"}  = "0*cm 5*cm 500*cm 0*deg 360*deg";
 	$beampipevac{"material"}    = "Vacuum";
-	$beampipevac{"visible"}     = 0;
-	$beampipevac{"style"}       = 0;
+	$beampipevac{"visible"}     = 1;
+	$beampipevac{"style"}       = 1;
 	print_det(\%configuration, \%beampipevac);
 
 	my %beampipe1 = init_det();
@@ -106,20 +108,22 @@ sub build_beampipe
 	$beampipe1{"material"}    = "G4_Pb";
 	$beampipe1{"visible"}     = 1;
 	$beampipe1{"style"}       = 1;
-	print_det(\%configuration, \%beampipe1);
+#	print_det(\%configuration, \%beampipe1);
 
 	my %beampipe1vac = init_det();
 	$beampipe1vac{"name"}        = "beampipe1vac";
 	$beampipe1vac{"mother"}      = "hall_a";
 	$beampipe1vac{"description"} = "Beam Pipe Vacuum";
-	$beampipe1vac{"pos"}         = "0*cm 0*cm 1050*cm";
-	$beampipe1vac{"rotation"}    = "0*deg 0*deg 0*deg";
+#	$beampipe1vac{"pos"}         = "0*cm 0*cm 1050*cm";
+#	$beampipe1vac{"rotation"}    = "0*deg 0*deg 0*deg";
+	$beampipe1vac{"pos"}         = "218.30727*cm 0*cm 1027.05498*cm";
+	$beampipe1vac{"rotation"}    = "0*deg -17*deg 0*deg";
 	$beampipe1vac{"color"}       = "888888";
 	$beampipe1vac{"type"}        = "Tube";
 	$beampipe1vac{"dimensions"}  = "0*cm 10*cm 500*cm 0*deg 360*deg";
 	$beampipe1vac{"material"}    = "Vacuum";
-	$beampipe1vac{"visible"}     = 0;
-	$beampipe1vac{"style"}       = 0;
+	$beampipe1vac{"visible"}     = 1;
+	$beampipe1vac{"style"}       = 1;
 	print_det(\%configuration, \%beampipe1vac);
 
 
@@ -150,7 +154,8 @@ sub build_3he_target
 	$target{"mother"}      = "3he_holding_field";
 	$target{"description"} = "3He target";
 	$target{"pos"}         = "0*cm 0*cm 0*cm";
-	$target{"rotation"}    = "0*deg 0*deg 0*deg";
+#	$target{"rotation"}    = "0*deg 0*deg 0*deg";
+	$target{"rotation"}    = "0*deg -17*deg 0*deg";
 	$target{"color"}       = "00BFFF";
 	$target{"type"}        = "Tube";
 	$target{"dimensions"}  = "0*cm 0.6*cm 20*cm 0*deg 360*deg";
@@ -296,7 +301,7 @@ sub build_rhrs
 	$rq1shield{"rotation"}   	= "0*deg 0*deg 0*deg";
 	$rq1shield{"color"}			= "C0C0C0";
 	$rq1shield{"type"}       	= "Tube";
-	$rq1shield{"dimensions"} 	= "45.72*cm 100*cm 40*cm 0*deg 360*deg";
+	$rq1shield{"dimensions"} 	= "45.72*cm 50*cm 40*cm 20*deg 310*deg";
 	$rq1shield{"visible"}    	= 1;
 	$rq1shield{"style"}      	= 1;
 	$rq1shield{"material"}		= "G4_STAINLESS-STEEL";
@@ -329,7 +334,7 @@ sub build_rhrs
 	$rq2shield{"rotation"}   	= "0*deg 0*deg 0*deg";
 	$rq2shield{"color"}	    	= "C0C0C0";
 	$rq2shield{"type"}       	= "Tube";
-	$rq2shield{"dimensions"} 	= "74.93*cm 150*cm 90*cm 0*deg 360*deg";
+	$rq2shield{"dimensions"} 	= "74.93*cm 80*cm 90*cm 0*deg 360*deg";
 	$rq2shield{"material"}    	= "G4_STAINLESS-STEEL";
 	$rq2shield{"visible"}    	= 1;
 	$rq2shield{"style"}      	= 1;
@@ -404,7 +409,7 @@ sub build_eleShieldHouse
 	$electron_shield{"dimensions"} 	= "250*cm 500*cm 500*cm";
 #	$electron_shield{"material"} 		= "Air_Opt";
 	$electron_shield{"material"} 		= $basemat;
-	$electron_shield{"visible"}    	= 1;
+	$electron_shield{"visible"}    	= 0;
 	$electron_shield{"style"}      	= 0;
 	print_det(\%configuration, \%electron_shield);
 
@@ -447,8 +452,8 @@ sub build_eleShieldHouse
 	$shield3{"dimensions"} 	= "50*cm 500*cm 500*cm";
 	$shield3{"material"}    = "G4_Pb";
 	$shield3{"visible"}    	= 1;
-	$shield3{"style"}      	= 1;
-#	print_det(\%configuration, \%shield3);
+	$shield3{"style"}      	= 0;
+	print_det(\%configuration, \%shield3);
 
 	my %shield4 = init_det();
 	$shield4{"name"}       	= "pb_shield4";
@@ -506,6 +511,20 @@ sub build_eleShieldHouse
 	$shield6{"style"}      	= 1;
 	print_det(\%configuration, \%shield6);
 
+	my %shield8 = init_det();
+	$shield8{"name"}       	= "pb_shield8";
+	$shield8{"mother"}     	= "electron_arm_shield_house";
+	$shield8{"description"}	= "Lead Shielding Back";
+	$shield8{"pos"}        	= "0*cm 0*cm 450*cm";
+	$shield8{"rotation"}   	= "0*deg 0*deg 0*deg";
+	$shield8{"color"}	    = "FFFFFF";
+	$shield8{"type"}       	= "Box";
+	$shield8{"dimensions"} 	= "250*cm 500*cm 50*cm";
+	$shield8{"material"}    = "G4_Pb";
+	$shield8{"visible"}    	= 1;
+	$shield8{"style"}      	= 1;
+	print_det(\%configuration, \%shield8);
+
 }
 
 sub build_eleDetector
@@ -523,7 +542,7 @@ sub build_eleDetector
 	$electron_pack{"dimensions"} 	= "50*cm 255*cm 220*cm";
 #	$electron_pack{"material"} 		= "Air_Opt";
 	$electron_pack{"material"} 		= $basemat;
-	$electron_pack{"visible"}    	= 1;
+	$electron_pack{"visible"}    	= 0;
 	$electron_pack{"style"}      	= 0;
 	print_det(\%configuration, \%electron_pack);
 
@@ -675,14 +694,28 @@ sub build_eleDetector
 
 sub build_hand
 {
+	my $deg				= 62.5+17;
+	my $rot				= -$deg;
+	my $r				= 600;
+	my $angle			= $deg*0.0174532925; # Degree -> Radians
+	my $x				= $r*sin($angle);
+	my $z				= $r*cos($angle);
+	my $xstr			= sprintf("%.5f", $x);
+	my $zstr			= sprintf("%.5f", $z);
+	my $rotstr			= sprintf("%.5f", $z);
+	my $hand_placement	= "";
+	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+	printf("HAND Pb Wall Placement: $hand_placement\n");
+
 	my %detector = init_det();
 	$detector{"name"}        = "hand";
 #	$detector{"mother"}      = "root";
 	$detector{"mother"}      = "hall_a";
 	$detector{"description"} = "Hall A Neutron Detector";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = "769*cm 0*cm 220*cm";
-	$detector{"rotation"}    = "0*deg -74*deg 0*deg";
+	$detector{"pos"}         = $hand_placement;
+	$detector{"rotation"}    = $hand_rotation;
 	$detector{"color"}       = "969696";
 	$detector{"type"}        = "Box";
 #	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
@@ -699,18 +732,31 @@ sub build_hand
 
 sub build_pbwall
 {
+
+	my $deg				= 62.5+17;
+	my $rot				= -$deg;
+	my $r				= 500;
+	my $angle			= $deg*0.0174532925; # Degree -> Radians
+	my $x				= $r*sin($angle);
+	my $z				= $r*cos($angle);
+	my $xstr			= sprintf("%.5f", $x);
+	my $zstr			= sprintf("%.5f", $z);
+	my $rotstr			= sprintf("%.5f", $z);
+	my $hand_placement	= "";
+	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+	printf("HAND Pb Wall Placement: $hand_placement\n");
+
 	my %pbwall = init_det();
 	$pbwall{"name"}        = "lead_wall";
 	$pbwall{"mother"}      = "hall_a";
 	$pbwall{"description"} = "Hall A Neutron Detector - Pb Wall";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$pbwall{"pos"}         = "672*cm 0*cm 193*cm";
-	$pbwall{"rotation"}    = "0*deg -74*deg 0*deg";
+	$pbwall{"pos"}         = $hand_placement;
+	$pbwall{"rotation"}    = $hand_rotation;
 	$pbwall{"color"}       = "B7410E";
 	$pbwall{"type"}        = "Box";
-#	$pbwall{"dimensions"}  = "100*cm 320*cm 40*cm";
 	$pbwall{"dimensions"}  = "100*cm 160*cm 5*cm";
-#	$pbwall{"material"}    = "G4_GLASS_LEAD";
 	$pbwall{"material"}    = "G4_Pb";
 	$pbwall{"visible"}     = 1;
 	$pbwall{"style"}       = 1;
@@ -737,10 +783,10 @@ sub build_pbwall
 
 
 build_hall();
+#build_beampipe();
 build_hand();
 #build_pbwall();
 build_rhrs();
 build_eleShieldHouse();
 build_eleDetector();
 build_3he_target();
-#build_beampipe();

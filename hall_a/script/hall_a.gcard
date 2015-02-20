@@ -3,11 +3,13 @@
 	<detector name="hall_a" factory="TEXT" variation="mine"/>
 	<field name="hall_a"/>
 	<!-- option name="BEAM_P" value="e-, 1.245*GeV, 0*deg, 0*deg"/ -->
-	<option name="BEAM_P" value="e-, 2.18130*GeV, 0*deg, 0*deg"/>
-	<option name="BEAM_V" value="(0, 0, -525)cm"/>
+	<option name="BEAM_P" value="e-, 2.4250*GeV, 17*deg, 0*deg"/>
+	<!-- option name="BEAM_V" value="(0, 0, -525)cm"/ -->
+	<option name="BEAM_V" value="(-7.3092926, 0, -523.907619)cm"/>
 	<option name="SPREAD_V" value="(2,-2)mm"/>
-	<option name="SPREAD_P" value="0.12*GeV, 0.2*deg, 180*deg"/>
-	<option name="PHYSICS" value="QGSP_BERT + STD + Optical"/>
+	<option name="SPREAD_P" value="0.12*GeV, 0.2*deg, 10*deg"/>
+	<!-- option name="PHYSICS" value="QGSP_BERT + STD + Optical"/ -->
+	<option name="PHYSICS" value="QGSP_BERT + EMV"/>
 	<!-- option name="N" value="10"/ -->
 	<option name="INTEGRATEDRAW" value="flux"/>
 	
