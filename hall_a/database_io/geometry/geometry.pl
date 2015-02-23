@@ -39,10 +39,14 @@ open my $inputFile, '<', "rhrsAngle.txt" or die $!;
 while (<$inputFile>){
     if ($rhrsAngle==0) {$rhrsAngle=$_;}
 }
-printf "RHRS Angle: %.2f degrees\n", $rhrsAngle;
 close $inputFile or die $!;
 my $rhrsAngleRad = $rhrsAngle*0.0174532925; # Degree --> Radians
 
+printf "\n\n******************************************\n";
+printf "RHRS Angle: %.2f degrees\n", $rhrsAngle;
+printf "RHRS Momentum Setting: ".$magfield." GeV\n";
+printf "Hall Material: " .$basemat."\n";
+printf "******************************************\n\n";
 
 sub build_hall
 {
