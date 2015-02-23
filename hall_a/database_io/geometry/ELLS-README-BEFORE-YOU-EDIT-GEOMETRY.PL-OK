@@ -1,0 +1,11 @@
+Things to do: 
+
+RHRS angle is defined in a separate file, 
+and currently set up to move the spectrometer. 
+Until the magnetic field options are changed 
+within gemc, this has to be edited such that 
+it rotates the rest of the hall around the 
+spectrometer, keeping the RHRS at 0 deg while 
+rotating everything else.
+
+
