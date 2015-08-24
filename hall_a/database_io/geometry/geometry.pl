@@ -30,17 +30,31 @@ our %configuration = load_configuration($ARGV[0]);
 my $basemat="Air_Opt";
 #my $basemat="Vacuum";
 
-#my $magfield="1.17591";
-my $magfield="2.18130";
+my $magfield="1.17591";
+#my $magfield="2.18130";
+
+my $test=0;
+#my $test=1;
+
+if ($test eq 1)
+{
+	print "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#"
+	print " --> All HRS detector materials set to $basemat"
+}
 
 # Get RHRS angle from input file
-my $rhrsAngle=0;
+my $rhrsAngle=0.0;
 open my $inputFile, '<', "rhrsAngle.txt" or die $!;
 while (<$inputFile>){
     if ($rhrsAngle==0) {$rhrsAngle=$_;}
 }
 close $inputFile or die $!;
 my $rhrsAngleRad = $rhrsAngle*0.0174532925; # Degree --> Radians
+# my $negRHRSAngl = - $rhrsAngle;
+my $dummyDbl=0.0;
+$dummyDbl=$rhrsAngle;
+$dummyDbl=$rhrsAngle+0.0;
+$rhrsAngle=$dummyDbl;
 
 printf "\n\n******************************************\n";
 printf "RHRS Angle: %.2f degrees\n", $rhrsAngle;
@@ -66,6 +80,22 @@ sub build_hall
 	$detector{"visible"}     = 1;
 	$detector{"style"}       = 0;
 	print_det(\%configuration, \%detector);
+
+#	my %detector = init_det();
+#	$detector{"name"}        = "box";
+#	$detector{"mother"}      = "root";
+#	$detector{"description"} = "Hall A";
+#	$detector{"pos"}         = "0*cm 0*cm 0*cm";
+##	$detector{"pos"}         = "0*cm 0*cm 0*cm";
+#	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
+#	$detector{"color"}       = "00BFFF";
+#	$detector{"type"}        = "Box";
+#	$detector{"dimensions"}  = "20*m 20*m 20*m";
+#	$detector{"material"}    = $basemat;
+#	$detector{"visible"}     = 1;
+#	$detector{"style"}       = 0;
+#	print_det(\%configuration, \%detector);
+
 }
 
 sub build_beampipe
@@ -159,7 +189,7 @@ sub build_3he_target
 	$target{"description"} = "3He target";
 	$target{"pos"}         = "0*cm 0*cm 0*cm";
 #	$target{"rotation"}    = "0*deg 0*deg 0*deg";
-	$target{"rotation"}    = "0*deg -17*deg 0*deg";
+	$target{"rotation"}    = "0*deg $rhrsAngle*deg 0*deg";
 	$target{"color"}       = "00BFFF";
 	$target{"type"}        = "Tube";
 	$target{"dimensions"}  = "0*cm 0.6*cm 20*cm 0*deg 360*deg";
@@ -173,9 +203,9 @@ sub build_3he_target
 
 sub build_rhrs
 {
-	my $deg				= $rhrsAngle;
+#	my $deg				= $rhrsAngle;
 #	my $deg				= -12;
-#	my $deg				= 0;
+	my $deg				= 0;
 	my $rot				= -$deg;
 	my $r				= 1038;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -385,12 +415,15 @@ sub build_rhrs
 sub build_eleShieldHouse
 {
 	my $r				= 2100;
-	my $x				= $r*sin($rhrsAngleRad);
-	my $z				= $r*cos($rhrsAngleRad);
+#	my $x				= $r*sin($rhrsAngleRad);
+#	my $z				= $r*cos($rhrsAngleRad);
+	my $x				= $r*sin(0);
+	my $z				= $r*cos(0);
 	my $xstr			= sprintf("%.5f", $x);
 	my $zstr			= sprintf("%.5f", $z);
 	my $rotstr			= sprintf("%.5f", $z);
-	my $rot				= -$rhrsAngle;
+#	my $rot				= -$rhrsAngle;
+	my $rot				= 0;
 	my $eshield_placement	= "";
 #	$eshield_placement	= $xstr."*cm 1235*cm ".$zstr."*cm";
 #	$eshield_placement	= $xstr."*cm 1000*cm ".$zstr."*cm";
@@ -538,7 +571,8 @@ sub build_eleDetector
 #	$electron_pack{"mother"}     	= "root";
 	$electron_pack{"mother"}     	= "electron_arm_shield_house";
 	$electron_pack{"description"}	= "Electron Detector Package";
-	$electron_pack{"pos"}        	= "0*cm -245*cm -140*cm";
+#	$electron_pack{"pos"}        	= "0*cm -245*cm -140*cm";
+	$electron_pack{"pos"}        	= "0*cm -245*cm 0*cm";
 	$electron_pack{"rotation"}   	= "0*deg 0*deg 0*deg";
 	$electron_pack{"color"}	        = "B0E0E6";
 	$electron_pack{"type"}       	= "Box";
@@ -579,8 +613,14 @@ sub build_eleDetector
 	$s1_det{"color"}	        = "585858";
 	$s1_det{"type"}       	= "Box";
 	$s1_det{"dimensions"} 	= "40*cm 0.15*cm 130*cm";
-	$s1_det{"material"}    	= "scintillator";
-#	$s1_det{"material"}    	= "Air_Opt";
+	if ($test eq 1)
+	{
+		$s1_det{"material"}    	= "Air_Opt";
+	}
+	else
+	{
+		$s1_det{"material"}    	= "scintillator";
+	}
 	$s1_det{"visible"}    	= 1;
 	$s1_det{"style"}      	= 1;
 	$s1_det{"sensitivity"}	= "flux";
@@ -617,8 +657,14 @@ sub build_eleDetector
 	$s2_det{"color"}	    = "585858";
 	$s2_det{"type"}       	= "Box";
 	$s2_det{"dimensions"} 	= "40*cm 0.15*cm 130*cm";
-	$s2_det{"material"}    	= "scintillator";
-#	$s2_det{"material"}    	= "Air_Opt";
+	if ($test eq 1)
+	{
+		$s2_det{"material"}    	= "Air_Opt";
+	}
+	else
+	{
+		$s2_det{"material"}    	= "scintillator";
+	}
 	$s2_det{"visible"}    	= 1;
 	$s2_det{"style"}      	= 1;
 	$s2_det{"sensitivity"}	= "flux";
@@ -636,7 +682,14 @@ sub build_eleDetector
 	$psal_det{"color"}	    	= "E0E0E0";
 	$psal_det{"type"}       	= "Box";
 	$psal_det{"dimensions"} 	= "40*cm 0.065*cm 130*cm";
-	$psal_det{"material"}    	= "G4_Al";
+	if ($test eq 1)
+	{
+		$psal_det{"material"}	= $basemat;
+	}
+	else
+	{
+		$psal_det{"material"}    	= "G4_Al";
+	}
 	$psal_det{"visible"}    	= 1;
 	$psal_det{"style"}      	= 1;
 	print_det(\%configuration, \%psal_det);
@@ -651,7 +704,8 @@ sub build_eleDetector
 	$ps_det{"color"}	    = "CC9933";
 	$ps_det{"type"}       	= "Box";
 	$ps_det{"dimensions"} 	= "35*cm 5*cm 120*cm";
-	$ps_det{"material"}    	= "G4_GLASS_LEAD";
+#	$ps_det{"material"}    	= "G4_GLASS_LEAD";
+	$ps_det{"material"}    	= $basemat;
 	$ps_det{"visible"}    	= 1;
 	$ps_det{"style"}      	= 1;
 	$ps_det{"sensitivity"}	= "flux";
@@ -669,7 +723,14 @@ sub build_eleDetector
 	$shal_det{"color"}	    	= "E0E0E0";
 	$shal_det{"type"}       	= "Box";
 	$shal_det{"dimensions"} 	= "40*cm 0.095*cm 130*cm";
-	$shal_det{"material"}    	= "G4_Al";
+	if ($test eq 1)
+	{
+		$shal_det{"material"}	= $basemat;
+	}
+	else
+	{
+		$shal_det{"material"}    	= "G4_Al";
+	}
 	$shal_det{"visible"}    	= 1;
 	$shal_det{"style"}      	= 1;
 	print_det(\%configuration, \%shal_det);
@@ -684,7 +745,14 @@ sub build_eleDetector
 	$sh_det{"color"}	    = "CC9933";
 	$sh_det{"type"}       	= "Box";
 	$sh_det{"dimensions"} 	= "36.25*cm 17.5*cm 116*cm";
-	$sh_det{"material"}    	= "G4_GLASS_LEAD";
+	if ($test eq 1)
+	{
+		$sh_det{"material"}	= $basemat;
+	}
+	else
+	{
+		$sh_det{"material"}    	= "G4_GLASS_LEAD";
+	}
 	$sh_det{"visible"}    	= 1;
 	$sh_det{"style"}      	= 1;
 	$sh_det{"sensitivity"}	= "flux";
@@ -698,7 +766,7 @@ sub build_eleDetector
 
 sub build_hand
 {
-	my $deg				= 62.5+17;
+	my $deg				= 62.5+$rhrsAngle;
 	my $rot				= -$deg;
 	my $r				= 600;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -737,7 +805,7 @@ sub build_hand
 sub build_pbwall
 {
 
-	my $deg				= 62.5+17;
+	my $deg				= 62.5+$rhrsAngle;
 	my $rot				= -$deg;
 	my $r				= 500;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians

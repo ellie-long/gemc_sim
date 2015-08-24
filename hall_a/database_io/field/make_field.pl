@@ -5,15 +5,21 @@ use warnings;
 #use warnings FATAL => 'all';
 #use autodie qw(:all);
 
+print "vvvvvvvvvvv make_field.pl vvvvvvvvvvvvvvvvvvvvvvvv\n"; 
+print "Note: RHRS Angle for fields should be 0.0 until\n";
+print "      gemc is updated to allow for rotation of\n";
+print "      quadrupole magnets for multi-spectrometer\n";
+print "      use.\n";
 # Get RHRS angle from input file
-my $rhrsAngle=0;
+my $rhrsAngle=0.0;
 open my $inputFile, '<', "rhrsAngle.txt" or die $!;
 while (<$inputFile>){
     if ($rhrsAngle==0) {$rhrsAngle=$_;}
 }
-printf "RHRS Angle: %.2f degrees\n", $rhrsAngle;
+$rhrsAngle = 0.0;
+printf "RHRS Angle: %.2f degrees (Should read 0.0 for fields)\n", $rhrsAngle;
 close $inputFile or die $!;
-my $rhrsAngleRad = $rhrsAngle*0.0174532925; # Degree --> Radians
+my $rhrsAngleRad = $rhrsAngle*3.14159/180; # Degree --> Radians
 my $r = 300;
 my $x = $r*sin($rhrsAngleRad);
 my $y = 0;
@@ -66,7 +72,8 @@ sub make_1_175971GeV
 	$r = -0.4313;
 	$x = $r*cos($rhrsAngleRad);
 	$y = 0;
-	$z = $r*sin($rhrsAngleRad)-500;
+#	$z = $r*sin($rhrsAngleRad)-500;
+	$z = $r*sin($rhrsAngleRad);
 	open $fh, '>', '../database_io/field/dipole_1.17591GeV.txt' or die $!;
 	print {$fh} "<mfield>\n";
 	print {$fh} "	<description name=\"dipole_1.17591GeV\" factory=\"ASCII\" comment=\"RHRS Dipole Magnet\"/>\n";
@@ -139,3 +146,6 @@ sub make_2_18130GeV
 
 make_1_175971GeV();
 make_2_18130GeV();
+
+
+print "^^^^^^^^^^^ make_field.pl ^^^^^^^^^^^^^^^^^^^^^^^^\n"; 
