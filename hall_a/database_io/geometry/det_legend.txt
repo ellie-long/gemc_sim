@@ -1,0 +1,13 @@
+
+RHRS
+100 - VDC
+101 - S1 Scintillator
+102 - S2 Scintillator
+103 - Cherenkov
+104 - Preshower
+105 - Shower
+
+HAND
+400 - HAND (Full)
+
+
