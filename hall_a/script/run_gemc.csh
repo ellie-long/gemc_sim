@@ -2,7 +2,7 @@
 #set printf
 #set verbose
 
-set now=`date +"%Y-%m-%d-%T"`
+set now=`date +"%Y-%m-%d-%T.%4N"`
 printf "$now\n"
 
 # Note: Leave RHRS angle positive, but know that it will

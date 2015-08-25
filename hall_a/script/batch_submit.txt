@@ -1,0 +1,6 @@
+PROJECT: e05102
+TRACK: simulation
+JOBNAME: halla_sim_e05102
+COMMAND: ./run_batch.csh
+INPUT_FILES: /w/halla-scifs2/e05102/ellie/gemc_sim/hall_a/script/run_batch.csh 
+MULTI_JOBS:3
