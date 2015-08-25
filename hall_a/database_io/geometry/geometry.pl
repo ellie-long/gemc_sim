@@ -39,9 +39,9 @@ my $test=0;
 
 if ($test eq 1)
 {
-	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n"
-	printf " --> All HRS detector materials set to $basemat\n"
-	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n\n"
+	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n";
+	printf "     All HRS detector materials set to".$basemat."\n";
+	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n\n";
 }
 
 # Get RHRS angle from input file
