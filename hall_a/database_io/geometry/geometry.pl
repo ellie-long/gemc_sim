@@ -30,7 +30,8 @@ our %configuration = load_configuration($ARGV[0]);
 my $basemat="Air_Opt";
 #my $basemat="Vacuum";
 
-my $magfield="1.17591";
+my $magfield="1.245";
+#my $magfield="1.17591";
 #my $magfield="2.18130";
 
 my $test=0;
@@ -38,8 +39,9 @@ my $test=0;
 
 if ($test eq 1)
 {
-	print "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#"
-	print " --> All HRS detector materials set to $basemat"
+	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n"
+	printf " --> All HRS detector materials set to $basemat\n"
+	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n\n"
 }
 
 # Get RHRS angle from input file

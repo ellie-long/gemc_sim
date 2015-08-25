@@ -85,6 +85,65 @@ sub make_1_175971GeV
 
 }
 
+sub make_1_245GeV
+{
+
+	# Create and print Q1 
+	$r = -0.06;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 0;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open my $fh, '>', '../database_io/field/q1_1.245GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q1_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q1 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"-229\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Q2
+	$r = 224.72;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 0;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open $fh, '>', '../database_io/field/q2_1.245GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q2_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q2 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"2752\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Q3
+	$r = 177.2;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 415.92;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open $fh, '>', '../database_io/field/q3_1.245GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q3_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q3 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"2168\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Dipole
+	$r = -0.3711;
+	$x = $r*cos($rhrsAngleRad);
+	$y = 0;
+#	$z = $r*sin($rhrsAngleRad)-500;
+	$z = $r*sin($rhrsAngleRad);
+	open $fh, '>', '../database_io/field/dipole_1.245GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"dipole_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Dipole Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"uniform\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension bx=\"".$x."\" by=\"".$y."\" bz=\"".$z."\" units=\"T\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+
+}
+
 
 sub make_2_18130GeV
 {
