@@ -9,6 +9,7 @@ printf "$now\n"
 # be to the right of the beamline. This is done by including
 # the negative in the echo line below.
 set rhrsAngle=17.0
+rm rhrsAngle.txt
 echo "-$rhrsAngle" > rhrsAngle.txt
 printf "rhrsAngle: -%f\n" $rhrsAngle
 
