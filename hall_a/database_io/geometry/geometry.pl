@@ -30,12 +30,13 @@ our %configuration = load_configuration($ARGV[0]);
 my $basemat="Air_Opt";
 #my $basemat="Vacuum";
 
-my $magfield="1.245";
-#my $magfield="1.17591";
-#my $magfield="2.18130";
+#my $magfield="1.1759";
+##my $magfield="1.17591";
+my $magfield="2.18130";
+#my $magfield="3.0855";
 
-my $test=0;
-#my $test=1;
+#my $test=0;
+my $test=1;
 
 if ($test eq 1)
 {
@@ -574,7 +575,8 @@ sub build_eleDetector
 	$electron_pack{"mother"}     	= "electron_arm_shield_house";
 	$electron_pack{"description"}	= "Electron Detector Package";
 #	$electron_pack{"pos"}        	= "0*cm -245*cm -140*cm";
-	$electron_pack{"pos"}        	= "0*cm -245*cm 0*cm";
+	$electron_pack{"pos"}        	= "0*cm -245*cm -90*cm";
+#	$electron_pack{"pos"}        	= "0*cm -245*cm 0*cm";
 	$electron_pack{"rotation"}   	= "0*deg 0*deg 0*deg";
 	$electron_pack{"color"}	        = "B0E0E6";
 	$electron_pack{"type"}       	= "Box";
@@ -780,6 +782,56 @@ sub build_hand
 	my $hand_placement	= "";
 	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
 	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	if($magfield == "1.1759")
+	{
+		$deg			= 71.0+$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "2.18130")
+	{
+		$deg			= 62.5+$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "3.0855")
+	{
+		$deg			= 54.0+$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+
 	printf("HAND Pb Wall Placement: $hand_placement\n");
 
 	my %detector = init_det();

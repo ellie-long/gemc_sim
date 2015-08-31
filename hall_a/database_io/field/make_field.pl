@@ -85,7 +85,7 @@ sub make_1_175971GeV
 
 }
 
-sub make_1_245GeV
+sub make_1_1759GeV
 {
 
 	# Create and print Q1 
@@ -93,9 +93,9 @@ sub make_1_245GeV
 	$x = $r*sin($rhrsAngleRad);
 	$y = 0;
 	$z = $r*cos($rhrsAngleRad)-500;
-	open my $fh, '>', '../database_io/field/q1_1.245GeV.txt' or die $!;
+	open my $fh, '>', '../database_io/field/q1_1.1759GeV.txt' or die $!;
 	print {$fh} "<mfield>\n";
-	print {$fh} "	<description name=\"q1_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q1 Magnet\"/>\n";
+	print {$fh} "	<description name=\"q1_1.1759GeV\" factory=\"ASCII\" comment=\"RHRS Q1 Magnet\"/>\n";
 	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
 	print {$fh} "	<dimension Npole=\"4\" scale=\"-229\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
 	print {$fh} "</mfield>\n";
@@ -106,9 +106,9 @@ sub make_1_245GeV
 	$x = $r*sin($rhrsAngleRad);
 	$y = 0;
 	$z = $r*cos($rhrsAngleRad)-500;
-	open $fh, '>', '../database_io/field/q2_1.245GeV.txt' or die $!;
+	open $fh, '>', '../database_io/field/q2_1.1759GeV.txt' or die $!;
 	print {$fh} "<mfield>\n";
-	print {$fh} "	<description name=\"q2_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q2 Magnet\"/>\n";
+	print {$fh} "	<description name=\"q2_1.1759GeV\" factory=\"ASCII\" comment=\"RHRS Q2 Magnet\"/>\n";
 	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
 	print {$fh} "	<dimension Npole=\"4\" scale=\"2752\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
 	print {$fh} "</mfield>\n";
@@ -119,9 +119,9 @@ sub make_1_245GeV
 	$x = $r*sin($rhrsAngleRad);
 	$y = 415.92;
 	$z = $r*cos($rhrsAngleRad)-500;
-	open $fh, '>', '../database_io/field/q3_1.245GeV.txt' or die $!;
+	open $fh, '>', '../database_io/field/q3_1.1759GeV.txt' or die $!;
 	print {$fh} "<mfield>\n";
-	print {$fh} "	<description name=\"q3_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Q3 Magnet\"/>\n";
+	print {$fh} "	<description name=\"q3_1.1759GeV\" factory=\"ASCII\" comment=\"RHRS Q3 Magnet\"/>\n";
 	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
 	print {$fh} "	<dimension Npole=\"4\" scale=\"2168\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
 	print {$fh} "</mfield>\n";
@@ -133,9 +133,9 @@ sub make_1_245GeV
 	$y = 0;
 #	$z = $r*sin($rhrsAngleRad)-500;
 	$z = $r*sin($rhrsAngleRad);
-	open $fh, '>', '../database_io/field/dipole_1.245GeV.txt' or die $!;
+	open $fh, '>', '../database_io/field/dipole_1.1759GeV.txt' or die $!;
 	print {$fh} "<mfield>\n";
-	print {$fh} "	<description name=\"dipole_1.245GeV\" factory=\"ASCII\" comment=\"RHRS Dipole Magnet\"/>\n";
+	print {$fh} "	<description name=\"dipole_1.1759GeV\" factory=\"ASCII\" comment=\"RHRS Dipole Magnet\"/>\n";
 	print {$fh}	"	<symmetry type=\"uniform\" format=\"simple\" integration=\"RungeKutta\"/>\n";
 	print {$fh} "	<dimension bx=\"".$x."\" by=\"".$y."\" bz=\"".$z."\" units=\"T\"/>\n";
 	print {$fh} "</mfield>\n";
@@ -149,7 +149,7 @@ sub make_2_18130GeV
 {
 
 	# Create and print Q1 
-	$r = 209;
+	$r = -40.77;
 	$x = $r*sin($rhrsAngleRad);
 	$y = 0;
 	$z = $r*cos($rhrsAngleRad)-500;
@@ -162,7 +162,7 @@ sub make_2_18130GeV
 	close $fh or die $!;
 
 	# Create and print Q2
-	$r = 493;
+	$r = 491.50;
 	$x = $r*sin($rhrsAngleRad);
 	$y = 0;
 	$z = $r*cos($rhrsAngleRad)-500;
@@ -175,7 +175,7 @@ sub make_2_18130GeV
 	close $fh or die $!;
 
 	# Create and print Q3
-	$r = 1759.92;
+	$r = 388.40;
 	$x = $r*sin($rhrsAngleRad);
 	$y = 415.92;
 	$z = $r*cos($rhrsAngleRad)-500;
@@ -188,7 +188,7 @@ sub make_2_18130GeV
 	close $fh or die $!;
 
 	# Create and print Dipole
-	$r = -0.8094507;
+	$r = -0.80944;
 	$x = $r*cos($rhrsAngleRad);
 	$y = 0;
 	$z = $r*sin($rhrsAngleRad);
@@ -203,9 +203,71 @@ sub make_2_18130GeV
 
 }
 
+sub make_3_0855GeV
+{
+
+	# Create and print Q1 
+	$r = -57.59;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 0;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open my $fh, '>', '../database_io/field/q1_3.0855GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q1_3.0855GeV\" factory=\"ASCII\" comment=\"RHRS Q1 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"-229\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Q2
+	$r = 694.00;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 0;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open $fh, '>', '../database_io/field/q2_3.0855GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q2_3.0855GeV\" factory=\"ASCII\" comment=\"RHRS Q2 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"2752\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Q3
+	$r = 549.20;
+	$x = $r*sin($rhrsAngleRad);
+	$y = 415.92;
+	$z = $r*cos($rhrsAngleRad)-500;
+	open $fh, '>', '../database_io/field/q3_3.0855GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"q3_3.0855GeV\" factory=\"ASCII\" comment=\"RHRS Q3 Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"multipole\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension Npole=\"4\" scale=\"2168\" x=\"".$x."\" y=\"".$y."\" z=\"".$z."\" rot=\"".$rhrsAngleFlip."\" ROTaxis=\"Y\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+	# Create and print Dipole
+	$r = -1.14498;
+	$x = $r*cos($rhrsAngleRad);
+	$y = 0;
+#	$z = $r*sin($rhrsAngleRad)-500;
+	$z = $r*sin($rhrsAngleRad);
+	open $fh, '>', '../database_io/field/dipole_3.0855GeV.txt' or die $!;
+	print {$fh} "<mfield>\n";
+	print {$fh} "	<description name=\"dipole_3.0855GeV\" factory=\"ASCII\" comment=\"RHRS Dipole Magnet\"/>\n";
+	print {$fh}	"	<symmetry type=\"uniform\" format=\"simple\" integration=\"RungeKutta\"/>\n";
+	print {$fh} "	<dimension bx=\"".$x."\" by=\"".$y."\" bz=\"".$z."\" units=\"T\"/>\n";
+	print {$fh} "</mfield>\n";
+	close $fh or die $!;
+
+
+}
+
+
+
 make_1_175971GeV();
-make_1_245GeV();
+make_1_1759GeV();
 make_2_18130GeV();
+make_3_0855GeV();
 
 
 print "^^^^^^^^^^^ make_field.pl ^^^^^^^^^^^^^^^^^^^^^^^^\n"; 
