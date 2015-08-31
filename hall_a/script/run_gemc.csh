@@ -7,8 +7,8 @@ set now="$PBS_JOBID"
 printf "$now\n"
 
 set beamv=`cat temp_beamv.txt`
-set rhrsAngle=`cat rhrsAngle.txt`
-
+set rhrsAngleIn=`cat rhrsAngle.txt`
+set rhrsAngle=`echo "$rhrsAngleIn * -1" | bc`
 set outFolder="../output"
 set logFolder="../logs"
 set outEvio="$outFolder/evio/$now-output.evio"
