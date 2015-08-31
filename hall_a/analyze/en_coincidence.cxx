@@ -53,6 +53,10 @@ void en_coincidence()
 	bool pHAND = false;
 	bool eHAND = false;
 	bool gHAND = false;
+	bool nHANDVeto = false;
+	bool pHANDVeto = false;
+	bool eHANDVeto = false;
+	bool gHANDVeto = false;
 	bool eRHRS = false;
 	bool isHit = false;
 
@@ -66,7 +70,10 @@ void en_coincidence()
 	int eeH = 0;
 	int egH = 0;
 	int hits = 0;
-
+	int nv = 0;
+	int pv = 0;
+	int ev = 0;
+	int gv = 0;
 	for (int i=0; i<nentries; i++)
 //	for (int i=0; i<500000; i++)
 	{
@@ -79,21 +86,33 @@ void en_coincidence()
 		pHAND = false;
 		eHAND = false;
 		gHAND = false;
+		nHANDVeto = false;
+		pHANDVeto = false;
+		eHANDVeto = false;
+		gHANDVeto = false;
 		eRHRS = false;
 		flux->GetEntry(i+1);
 //		cout << "i = " << i << ", pid = " << pid << ", id = " << id << ", id->size() = " << id->size() << endl;
 		for (int j=0; j < id->size(); j++)
 		{
 			if (pid->at(j)==2112 && id->at(j)==400) {nHAND = true;}
+			if (pid->at(j)==2112 && id->at(j)==401) {nHANDVeto = true;}
 			if (pid->at(j)==2212 && id->at(j)==400) {pHAND = true;}
+			if (pid->at(j)==2212 && id->at(j)==401) {pHANDVeto = true;}
 			if (pid->at(j)==11 && id->at(j)==400) {eHAND = true;}
+			if (pid->at(j)==11 && id->at(j)==401) {eHANDVeto = true;}
 			if (pid->at(j)==22 && id->at(j)==400) {gHAND = true;}
+			if (pid->at(j)==22 && id->at(j)==401) {gHANDVeto = true;}
 			if (pid->at(j)==11 && (id->at(j)==100 || id->at(j)==101 || id->at(j)==102 || id->at(j)==103 || id->at(j)==104 || id->at(j)==105)) {eRHRS = true;}
 		}
 		if (nHAND) {n++;}
 		if (pHAND) {p++;}
 		if (eHAND) {eH++;}
 		if (gHAND) {gH++;}
+		if (nHANDVeto) {nv++;}
+		if (pHANDVeto) {pv++;}
+		if (eHANDVeto) {ev++;}
+		if (gHANDVeto) {gv++;}
 		if (eRHRS) {e++;}
 		if (eRHRS && nHAND) {en++;}
 		if (eRHRS && eHAND) {eeH++;}
@@ -112,6 +131,10 @@ void en_coincidence()
 	cout << "gamma in HAND: " << gH << endl;
 	cout << "(e,e'e''): " << eeH << endl;
 	cout << "(e,e'g): " << egH << endl;
+	cout << "e in HAND Veto: " << ev << endl;
+	cout << "g in HAND Veto: " << gv << endl;
+	cout << "p in HAND Veto: " << pv << endl;
+	cout << "n in HAND Veto: " << nv << endl;
 
 	TString outFilename = "../output/evt_count/";
 	outFilename += jobID;
@@ -130,6 +153,10 @@ void en_coincidence()
 	outFile << "08	gamma_in_HAND:	" << gH << endl;
 	outFile << "09	(e,e'e''):	" << eeH << endl;
 	outFile << "10	(e,e'g):	" << egH << endl;
+	outFile << "11	e_in_HAND_Veto:	" << ev << endl;
+	outFile << "12	g_in_HAND_Veto:	" << gv << endl;
+	outFile << "13	p_in_HAND_Veto:	" << pv << endl;
+	outFile << "14	n_in_HAND_Veto:	" << nv << endl;
 	outFile.close();
 
 	return;
