@@ -35,9 +35,9 @@ gemc \
 #-EXEC_MACRO=g4_settings.config \
 #-N=10 \
 #-DBUSER=root \
-#-BEAM_P="e-, 1.17591*GeV, $rhrsAngle*deg, 0*deg" \
--BEAM_P="e-, 1.2450*GeV, $rhrsAngle*deg, 0*deg" \
+#-BEAM_P="e-, 1.2450*GeV, $rhrsAngle*deg, 0*deg" \
 #-BEAM_P="e-, 2.4250*GeV, $rhrsAngle*deg, 0*deg" \
+-BEAM_P="e-, 3.6050*GeV, $rhrsAngle*deg, 0*deg" \
 -BEAM_V="$beamv" \
 -HALL_MATERIAL=Vacuum \
 -HALL_DIMENSIONS="40*m, 40*m, 40*m" \

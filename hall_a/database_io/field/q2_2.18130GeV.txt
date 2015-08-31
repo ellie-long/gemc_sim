@@ -1,5 +1,5 @@
 <mfield>
 	<description name="q2_2.18130GeV" factory="ASCII" comment="RHRS Q2 Magnet"/>
 	<symmetry type="multipole" format="simple" integration="RungeKutta"/>
-	<dimension Npole="4" scale="4914.0" x="0" y="0" z="-8.5" rot="0" ROTaxis="Y"/>
+	<dimension Npole="4" scale="4914.0" x="0" y="0" z="-8.5" rot="-0" ROTaxis="Y"/>
 </mfield>

@@ -32,8 +32,8 @@ my $basemat="Air_Opt";
 
 #my $magfield="1.1759";
 ##my $magfield="1.17591";
-my $magfield="2.18130";
-#my $magfield="3.0855";
+#my $magfield="2.18130";
+my $magfield="3.0855";
 
 #my $test=0;
 my $test=1;
