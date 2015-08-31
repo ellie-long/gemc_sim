@@ -15,21 +15,21 @@ For the hall_a scripts to work, you must have the following folder structure:
 gemc_sim/hall_a
 		/analyze		# Final analysis scripts
 		/database_io		# Used to run gemc simulation
-			/banks
-				/bankdefs
-			/field
-			/geometry
-			/materials
+		/database_io/banks
+		/database_io/banks/bankdefs
+		/database_io/field
+		/database_io/geometry
+		/database_io/materials
 *		/logs
 *		/output			# For file outputs
-*			/evio		# For temp evio files (should be empty after runs)
-*			/evt_count	# For plain text counting files
-*			/root		# For output root files
+*		/output/evio		# For temp evio files (should be empty after runs)
+*		/output/evt_count	# For plain text counting files
+*		/output/root		# For output root files
 *		/data_logs		# Symbolic link to large-scale storage
 *		/data_output		# Symbolic link to large-scale storage
-*			/evio
-*			/evt_count
-*			/root
+*		/data_output/evio
+*		/data_output/evt_count
+*		/data_output/root
 		/script			# Workhorse scripts
 
 
