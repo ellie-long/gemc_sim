@@ -14,7 +14,7 @@
 # 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-cat ../data_output/evt_count/*.dat > temp_all
+cat ../data_output/evt_count/1.235GeV-WrongBeamAngle/* > temp_all
 
 awk '{A[$1"	"$2"	"]+=$3;next}END{for(i in A){print i,A[i]}}' temp_all > temp_totcount
 

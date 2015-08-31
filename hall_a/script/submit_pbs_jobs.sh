@@ -2,10 +2,10 @@
 
 subStatus="./job_status.log";
 rm $subStatus;
-echo "How many jobs would you like to submit?" | tee -a $substatus;
+printf "How many jobs would you like to submit?\n" | tee -a $subStatus;
 read lines;
-echo $lines | tee -a $substatus;
-./prep_gemc.csh | tee -a $substatus;
+printf $lines | tee -a $subStatus;
+./prep_gemc.csh | tee -a $subStatus;
 
 batchSize=10000;
 #batchSize=152;
@@ -13,30 +13,38 @@ batchSize=10000;
 numBatches=`echo $lines/$batchSize | bc`;
 numBatchespp=`echo $lines/$batchSize + 1 | bc`;
 leftoverJobs=`echo $lines%$batchSize | bc`;
+n=1;
+perc=0;
 for j in `seq 1 $numBatches`;
 do
-	echo "Submitting batch $j of $numBatchespp:" | tee -a $subStatus;
+	printf "Submitting batch $j of $numBatchespp\n:" | tee -a $subStatus;
 	for i in `seq 1 $batchSize`;
 	do
-		echo "Submitting job $i of $batchSize:" | tee -a $subStatus;
+		perc=`echo "$n/$lines*100" | bc -l`; perc=`echo "scale=2;$perc/1" | bc`;
+		printf "\nSubmitting job $i of $batchSize\n" | tee -a $subStatus;
+		printf "   ($n of $lines, or $perc%%):\n" | tee -a $subStatus;
 		qsub batch_submit_UNH.sh | tee -a $subStatus;
+		n=`echo "$n + 1" | bc`
 	done
-	echo "Done submitting job batch $j!" | tee -a $substatus;
-	echo "Now let's wait for them to finish then automatically move the files to /data1" | tee -a $substatus;
-	echo | tee -a $substatus;echo | tee -a $substatus;echo | tee -a $substatus;
-	./end_run.sh;
+	printf "\nDone submitting job batch $j!\n" | tee -a $subStatus;
+	printf "Now let's wait for them to finish then automatically move the files to /data1\n" | tee -a $subStatus;
+	printf "\n\n\n" | tee -a $subStatus;
+	./end_run.sh | tee -a $subStatus;
 done;
-echo "Submitting batch $numBatchespp of $numBatchespp:" | tee -a $subStatus;
+printf "Submitting batch $numBatchespp of $numBatchespp:\n" | tee -a $subStatus;
 for i in `seq 1 $leftoverJobs`;
 do
-	echo "Submitting job $i of $leftoverJobs:" | tee -a $subStatus;
+	perc=`echo "$n/$lines*100" | bc -l`; perc=`echo "scale=2;$perc/1" | bc`;
+	printf "\nSubmitting job $i of $leftoverJobs\n" | tee -a $subStatus;
+	printf "   ($n of $lines, or $perc%%):\n" | tee -a $subStatus;
 	qsub batch_submit_UNH.sh | tee -a $subStatus;
+	n=`echo "$n + 1" | bc`
 done
-echo "Done submitting the last job batch!" | tee -a $substatus;
-echo "Now let's wait for them to finish then automatically move the files to /data1" | tee -a $substatus;
-echo | tee -a $substatus;echo | tee -a $substatus;echo | tee -a $substatus;
-./end_run.sh;
+printf "\nDone submitting the last job batch!\n" | tee -a $subStatus;
+printf "Now let's wait for them to finish then automatically move the files to /data1\n" | tee -a $subStatus;
+printf "\n\n\n" | tee -a $subStatus;
+./end_run.sh | tee -a $subStatus;
 
-echo "Done submitting all job batches!" | tee -a $subStatus
+printf "Done submitting all job batches!\n" | tee -a $subStatus
 
 

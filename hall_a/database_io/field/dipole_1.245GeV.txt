@@ -1,5 +1,5 @@
 <mfield>
 	<description name="dipole_1.245GeV" factory="ASCII" comment="RHRS Dipole Magnet"/>
 	<symmetry type="uniform" format="simple" integration="RungeKutta"/>
-	<dimension bx="-0.3711" by="0" bz="0" units="T"/>
+	<dimension bx="-0.3711" by="0" bz="-0" units="T"/>
 </mfield>

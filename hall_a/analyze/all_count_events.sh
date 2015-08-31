@@ -14,7 +14,8 @@
 # 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-cat ../data_output/evt_count/*.dat > temp_all
+cat ../output/evt_count/*.dat > temp_all 2> temp_err
+cat ../data_output/evt_count/*.dat >> temp_all 2> temp_err
 
 awk '{A[$1"	"$2"	"]+=$3;next}END{for(i in A){print i,A[i]}}' temp_all > temp_totcount
 
