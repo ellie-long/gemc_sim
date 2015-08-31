@@ -7,6 +7,33 @@ GEANT4 simulations built by Ellie Long using gemc. Each code is run using
 
 To build gemc (from https://gemc.jlab.org/gemc/Support/Entries/2011/8/1_Step_by_Step.html):
 
+--------------------------------------------------------------------------
+
+For the hall_a scripts to work, you must have the following folder structure:
+(Note that folders marked with an * are not included in the repo)
+
+gemc_sim/hall_a
+		/analyze		# Final analysis scripts
+		/database_io		# Used to run gemc simulation
+			/banks
+				/bankdefs
+			/field
+			/geometry
+			/materials
+*		/logs
+*		/output			# For file outputs
+*			/evio		# For temp evio files (should be empty after runs)
+*			/evt_count	# For plain text counting files
+*			/root		# For output root files
+*		/data_logs		# Symbolic link to large-scale storage
+*		/data_output		# Symbolic link to large-scale storage
+*			/evio
+*			/evt_count
+*			/root
+		/script			# Workhorse scripts
+
+
+--------------------------------------------------------------------------
 GENERAL REQUIREMENTS:
     -about 4GB of disk space
     -csh shell

@@ -17,13 +17,20 @@
 #include <math.h>
 #include <vector>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
 void en_coincidence()
 {
 
-	TString filename = "../output/output.root";
+	TString jobID;
+	jobID = getenv("PBS_JOBID");
+	
+	TString filename = "../output/root/";
+	filename += jobID;
+	filename += "-output.root";
 
 	TChain *flux = new TChain("flux");
 
@@ -105,6 +112,27 @@ void en_coincidence()
 	cout << "gamma in HAND: " << gH << endl;
 	cout << "(e,e'e''): " << eeH << endl;
 	cout << "(e,e'g): " << egH << endl;
+
+	TString outFilename = "../output/evt_count/";
+	outFilename += jobID;
+	outFilename += ".dat";
+
+	ofstream outFile;
+	outFile.open(outFilename);
+	outFile << "00	Num_Electrons:	" << i << endl;
+	outFile << "01	Num_Hits:	" << hits << endl;
+	outFile << "02	n_in_HAND:	" << n << endl;
+	outFile << "03	p_in_HAND:	" << p << endl;
+	outFile << "04	e_in_RHRS:	" << e << endl;
+	outFile << "05	(e,e'n):	" << en << endl;
+	outFile << "06	(e,e'p):	" << ep << endl;
+	outFile << "07	e_in_HAND:	" << eH << endl;
+	outFile << "08	gamma_in_HAND:	" << gH << endl;
+	outFile << "09	(e,e'e''):	" << eeH << endl;
+	outFile << "10	(e,e'g):	" << egH << endl;
+	outFile.close();
+
+	return;
 } 
 
 
