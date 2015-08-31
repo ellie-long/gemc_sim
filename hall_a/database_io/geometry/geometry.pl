@@ -770,7 +770,7 @@ sub build_eleDetector
 
 sub build_hand
 {
-	my $deg				= 62.5+$rhrsAngle;
+	my $deg				= 62.5-$rhrsAngle;
 	my $rot				= -$deg;
 	my $r				= 600;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -785,7 +785,7 @@ sub build_hand
 
 	if($magfield == "1.1759")
 	{
-		$deg			= 71.0+$rhrsAngle;
+		$deg			= 71.0-$rhrsAngle;
 		$rot			= -$deg;
 		$r				= 600;
 		$angle			= $deg*0.0174532925; # Degree -> Radians
@@ -801,7 +801,7 @@ sub build_hand
 	}
 	if($magfield == "2.18130")
 	{
-		$deg			= 62.5+$rhrsAngle;
+		$deg			= 62.5-$rhrsAngle;
 		$rot			= -$deg;
 		$r				= 600;
 		$angle			= $deg*0.0174532925; # Degree -> Radians
@@ -817,7 +817,7 @@ sub build_hand
 	}
 	if($magfield == "3.0855")
 	{
-		$deg			= 54.0+$rhrsAngle;
+		$deg			= 54.0-$rhrsAngle;
 		$rot			= -$deg;
 		$r				= 600;
 		$angle			= $deg*0.0174532925; # Degree -> Radians
@@ -832,7 +832,7 @@ sub build_hand
 
 	}
 
-	printf("HAND Pb Wall Placement: $hand_placement\n");
+	printf("HAND Placement: $hand_placement\n");
 
 	my %detector = init_det();
 	$detector{"name"}        = "hand";
@@ -845,8 +845,24 @@ sub build_hand
 	$detector{"color"}       = "969696";
 	$detector{"type"}        = "Box";
 #	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 160*cm 20*cm";
-#	$detector{"material"}    = "G4_GLASS_LEAD";
+	$detector{"dimensions"}  = "50*cm 160*cm 35*cm";
+	$detector{"material"}    = $basemat;
+	$detector{"visible"}     = 1;
+	$detector{"style"}       = 0;
+	print_det(\%configuration, \%detector);
+
+	my %detector = init_det();
+	$detector{"name"}        = "hand_scint";
+#	$detector{"mother"}      = "root";
+	$detector{"mother"}      = "hand";
+	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$detector{"pos"}         = "0*cm 0*cm 0*cm";
+	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
+	$detector{"color"}       = "969696";
+	$detector{"type"}        = "Box";
+#	$detector{"dimensions"}  = "100*cm 300*cm 40*cm";
+	$detector{"dimensions"}  = "50*cm 150*cm 20*cm";
 	$detector{"material"}    = "scintillator";
 	$detector{"visible"}     = 1;
 	$detector{"style"}       = 1;
@@ -854,12 +870,73 @@ sub build_hand
 	$detector{"hit_type"} 	 = "flux";
 	$detector{"identifiers"} = "id manual 400";
 	print_det(\%configuration, \%detector);
+
+	my %detector = init_det();
+	$detector{"name"}        = "veto_top";
+#	$detector{"mother"}      = "root";
+	$detector{"mother"}      = "hand";
+	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$detector{"pos"}         = "0*cm 95*cm -24*cm";
+	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
+	$detector{"color"}       = "969696";
+	$detector{"type"}        = "Box";
+#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$detector{"material"}    = "scintillator";
+	$detector{"visible"}     = 1;
+	$detector{"style"}       = 1;
+	$detector{"sensitivity"} = "flux";
+	$detector{"hit_type"} 	 = "flux";
+	$detector{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%detector);
+
+	my %detector = init_det();
+	$detector{"name"}        = "veto_bot";
+#	$detector{"mother"}      = "root";
+	$detector{"mother"}      = "hand";
+	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$detector{"pos"}         = "0*cm -95*cm -24*cm";
+	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
+	$detector{"color"}       = "969696";
+	$detector{"type"}        = "Box";
+#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$detector{"material"}    = "scintillator";
+	$detector{"visible"}     = 1;
+	$detector{"style"}       = 1;
+	$detector{"sensitivity"} = "flux";
+	$detector{"hit_type"} 	 = "flux";
+	$detector{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%detector);
+
+	my %detector = init_det();
+	$detector{"name"}        = "veto_mid";
+#	$detector{"mother"}      = "root";
+	$detector{"mother"}      = "hand";
+	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$detector{"pos"}         = "0*cm 0*cm -29*cm";
+	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
+	$detector{"color"}       = "969696";
+	$detector{"type"}        = "Box";
+#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$detector{"material"}    = "scintillator";
+	$detector{"visible"}     = 1;
+	$detector{"style"}       = 1;
+	$detector{"sensitivity"} = "flux";
+	$detector{"hit_type"} 	 = "flux";
+	$detector{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%detector);
+
 }
 
 sub build_pbwall
 {
 
-	my $deg				= 62.5+$rhrsAngle;
+	my $deg				= 62.5-$rhrsAngle;
 	my $rot				= -$deg;
 	my $r				= 500;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -871,6 +948,57 @@ sub build_pbwall
 	my $hand_placement	= "";
 	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
 	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	if($magfield == "1.1759")
+	{
+		$deg			= 71.0-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "2.18130")
+	{
+		$deg			= 62.5-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "3.0855")
+	{
+		$deg			= 54.0-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+
+
 	printf("HAND Pb Wall Placement: $hand_placement\n");
 
 	my %pbwall = init_det();
