@@ -24,7 +24,8 @@ do
 	sed -i '$ d' $subStatus;
 	echo -en "\rWaiting for $njobs jobs to finish... (Elapsed time: $elTimeNice)" | tee -a $subStatus;
 done
-echo | tee -a $subStatus; echo "Jobs done! Moving outputs to /data1" | tee -a $subStatus;
+echo | tee -a $subStatus; echo "Jobs done!" | tee -a $subStatus;
+echo | tee -a $subStatus; echo "Moving logs to /data1" | tee -a $subStatus;
 ./move_data.sh | tee -a $subStatus;
 
 t2="$(date +"%s")";

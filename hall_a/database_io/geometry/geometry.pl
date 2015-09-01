@@ -41,7 +41,7 @@ my $test=1;
 if ($test eq 1)
 {
 	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n";
-	printf "     All HRS detector materials set to".$basemat."\n";
+	printf "     All HRS detector materials set to ".$basemat."\n";
 	printf "#-#-#-#-#-#-#-#-#-# TEST MODE #-#-#-#-#-#-#-#-#-#-#-#-#\n\n";
 }
 
@@ -834,102 +834,102 @@ sub build_hand
 
 	printf("HAND Placement: $hand_placement\n");
 
-	my %detector = init_det();
-	$detector{"name"}        = "hand";
-#	$detector{"mother"}      = "root";
-	$detector{"mother"}      = "hall_a";
-	$detector{"description"} = "Hall A Neutron Detector";
+	my %hand = init_det();
+	$hand{"name"}        = "hand";
+#	$hand{"mother"}      = "root";
+	$hand{"mother"}      = "hall_a";
+	$hand{"description"} = "Hall A Neutron Detector";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = $hand_placement;
-	$detector{"rotation"}    = $hand_rotation;
-	$detector{"color"}       = "969696";
-	$detector{"type"}        = "Box";
-#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 160*cm 35*cm";
-	$detector{"material"}    = $basemat;
-	$detector{"visible"}     = 1;
-	$detector{"style"}       = 0;
-	print_det(\%configuration, \%detector);
+	$hand{"pos"}         = $hand_placement;
+	$hand{"rotation"}    = $hand_rotation;
+	$hand{"color"}       = "969696";
+	$hand{"type"}        = "Box";
+#	$hand{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$hand{"dimensions"}  = "50*cm 160*cm 35*cm";
+	$hand{"material"}    = $basemat;
+	$hand{"visible"}     = 1;
+	$hand{"style"}       = 0;
+	print_det(\%configuration, \%hand);
 
-	my %detector = init_det();
-	$detector{"name"}        = "hand_scint";
-#	$detector{"mother"}      = "root";
-	$detector{"mother"}      = "hand";
-	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+	my %handscint = init_det();
+	$handscint{"name"}        = "hand_scint";
+#	$handscint{"mother"}      = "root";
+	$handscint{"mother"}      = "hand";
+	$handscint{"description"} = "Hall A Neutron Detector Scintillator";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = "0*cm 0*cm 0*cm";
-	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
-	$detector{"color"}       = "969696";
-	$detector{"type"}        = "Box";
-#	$detector{"dimensions"}  = "100*cm 300*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 150*cm 20*cm";
-	$detector{"material"}    = "scintillator";
-	$detector{"visible"}     = 1;
-	$detector{"style"}       = 1;
-	$detector{"sensitivity"} = "flux";
-	$detector{"hit_type"} 	 = "flux";
-	$detector{"identifiers"} = "id manual 400";
-	print_det(\%configuration, \%detector);
+	$handscint{"pos"}         = "0*cm 0*cm 0*cm";
+	$handscint{"rotation"}    = "0*deg 0*deg 0*deg";
+	$handscint{"color"}       = "969696";
+	$handscint{"type"}        = "Box";
+#	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
+	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
+	$handscint{"material"}    = "scintillator";
+	$handscint{"visible"}     = 1;
+	$handscint{"style"}       = 1;
+	$handscint{"sensitivity"} = "flux";
+	$handscint{"hit_type"} 	 = "flux";
+	$handscint{"identifiers"} = "id manual 400";
+	print_det(\%configuration, \%handscint);
 
-	my %detector = init_det();
-	$detector{"name"}        = "veto_top";
-#	$detector{"mother"}      = "root";
-	$detector{"mother"}      = "hand";
-	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+	my %handVetoTop = init_det();
+	$handVetoTop{"name"}        = "veto_top";
+#	$handVetoTop{"mother"}      = "root";
+	$handVetoTop{"mother"}      = "hand";
+	$handVetoTop{"description"} = "Hall A Neutron Detector Scintillator";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = "0*cm 95*cm -24*cm";
-	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
-	$detector{"color"}       = "969696";
-	$detector{"type"}        = "Box";
-#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$detector{"material"}    = "scintillator";
-	$detector{"visible"}     = 1;
-	$detector{"style"}       = 1;
-	$detector{"sensitivity"} = "flux";
-	$detector{"hit_type"} 	 = "flux";
-	$detector{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%detector);
+	$handVetoTop{"pos"}         = "0*cm 95*cm -24*cm";
+	$handVetoTop{"rotation"}    = "0*deg 0*deg 0*deg";
+	$handVetoTop{"color"}       = "969696";
+	$handVetoTop{"type"}        = "Box";
+#	$handVetoTop{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$handVetoTop{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$handVetoTop{"material"}    = "scintillator";
+	$handVetoTop{"visible"}     = 1;
+	$handVetoTop{"style"}       = 1;
+	$handVetoTop{"sensitivity"} = "flux";
+	$handVetoTop{"hit_type"} 	 = "flux";
+	$handVetoTop{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%handVetoTop);
 
-	my %detector = init_det();
-	$detector{"name"}        = "veto_bot";
-#	$detector{"mother"}      = "root";
-	$detector{"mother"}      = "hand";
-	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+	my %handVetoBot = init_det();
+	$handVetoBot{"name"}        = "veto_bot";
+#	$handVetoBot{"mother"}      = "root";
+	$handVetoBot{"mother"}      = "hand";
+	$handVetoBot{"description"} = "Hall A Neutron Detector Scintillator";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = "0*cm -95*cm -24*cm";
-	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
-	$detector{"color"}       = "969696";
-	$detector{"type"}        = "Box";
-#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$detector{"material"}    = "scintillator";
-	$detector{"visible"}     = 1;
-	$detector{"style"}       = 1;
-	$detector{"sensitivity"} = "flux";
-	$detector{"hit_type"} 	 = "flux";
-	$detector{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%detector);
+	$handVetoBot{"pos"}         = "0*cm -95*cm -24*cm";
+	$handVetoBot{"rotation"}    = "0*deg 0*deg 0*deg";
+	$handVetoBot{"color"}       = "969696";
+	$handVetoBot{"type"}        = "Box";
+#	$handVetoBot{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$handVetoBot{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$handVetoBot{"material"}    = "scintillator";
+	$handVetoBot{"visible"}     = 1;
+	$handVetoBot{"style"}       = 1;
+	$handVetoBot{"sensitivity"} = "flux";
+	$handVetoBot{"hit_type"} 	 = "flux";
+	$handVetoBot{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%handVetoBot);
 
-	my %detector = init_det();
-	$detector{"name"}        = "veto_mid";
-#	$detector{"mother"}      = "root";
-	$detector{"mother"}      = "hand";
-	$detector{"description"} = "Hall A Neutron Detector Scintillator";
+	my %handVetoMid = init_det();
+	$handVetoMid{"name"}        = "veto_mid";
+#	$handVetoMid{"mother"}      = "root";
+	$handVetoMid{"mother"}      = "hand";
+	$handVetoMid{"description"} = "Hall A Neutron Detector Scintillator";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$detector{"pos"}         = "0*cm 0*cm -29*cm";
-	$detector{"rotation"}    = "0*deg 0*deg 0*deg";
-	$detector{"color"}       = "969696";
-	$detector{"type"}        = "Box";
-#	$detector{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$detector{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$detector{"material"}    = "scintillator";
-	$detector{"visible"}     = 1;
-	$detector{"style"}       = 1;
-	$detector{"sensitivity"} = "flux";
-	$detector{"hit_type"} 	 = "flux";
-	$detector{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%detector);
+	$handVetoMid{"pos"}         = "0*cm 0*cm -29*cm";
+	$handVetoMid{"rotation"}    = "0*deg 0*deg 0*deg";
+	$handVetoMid{"color"}       = "969696";
+	$handVetoMid{"type"}        = "Box";
+#	$handVetoMid{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$handVetoMid{"dimensions"}  = "50*cm 55*cm 2*cm";
+	$handVetoMid{"material"}    = "scintillator";
+	$handVetoMid{"visible"}     = 1;
+	$handVetoMid{"style"}       = 1;
+	$handVetoMid{"sensitivity"} = "flux";
+	$handVetoMid{"hit_type"} 	 = "flux";
+	$handVetoMid{"identifiers"} = "id manual 401";
+	print_det(\%configuration, \%handVetoMid);
 
 }
 
