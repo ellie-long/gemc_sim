@@ -14,15 +14,18 @@
 # 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-cat ../output/evt_count/*.dat > temp_all 2> temp_err
-cat ../data_output/evt_count/*.dat >> temp_all 2> temp_err
+cd /net/home/elong/gemc_sim/hall_a/output/evt_count/
+ls | xargs -n 32 -P 8 cat >> /net/home/elong/gemc_sim/hall_a/analyze/temp_all 2> /net/home/elong/gemc_sim/hall_a/analyze/temp_err
+cd /net/home/elong/gemc_sim/hall_a/data_output/evt_count/
+ls | xargs -n 32 -P 8 cat >> /net/home/elong/gemc_sim/hall_a/analyze/temp_all 2> /net/home/elong/gemc_sim/hall_a/analyze/temp_err
 
-awk '{A[$1"	"$2"	"]+=$3;next}END{for(i in A){print i,A[i]}}' temp_all > temp_totcount
+awk '{A[$1"	"$2"	"]+=$3;next}END{for(i in A){print i,A[i]}}' /net/home/elong/gemc_sim/hall_a/analyze/temp_all > /net/home/elong/gemc_sim/hall_a/analyze/temp_totcount
 
-sort temp_totcount > temp_final
+sort /net/home/elong/gemc_sim/hall_a/analyze/temp_totcount > /net/home/elong/gemc_sim/hall_a/analyze/temp_final
 
-cat temp_final
+cat /net/home/elong/gemc_sim/hall_a/analyze/temp_final > /net/home/elong/gemc_sim/hall_a/analyze/ana_final.dat
+cat /net/home/elong/gemc_sim/hall_a/analyze/temp_final
 
-rm temp*
+rm /net/home/elong/gemc_sim/hall_a/analyze/temp*
 
 
