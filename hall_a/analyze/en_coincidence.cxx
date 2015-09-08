@@ -95,7 +95,7 @@ void en_coincidence()
 //		cout << "i = " << i << ", pid = " << pid << ", id = " << id << ", id->size() = " << id->size() << endl;
 		for (int j=0; j < id->size(); j++)
 		{
-			if (pid->at(j)==2112 && id->at(j)==400) {nHAND = true;}
+/*			if (pid->at(j)==2112 && id->at(j)==400) {nHAND = true;}
 			if (pid->at(j)==2112 && id->at(j)==401) {nHANDVeto = true;}
 			if (pid->at(j)==2212 && id->at(j)==400) {pHAND = true;}
 			if (pid->at(j)==2212 && id->at(j)==401) {pHANDVeto = true;}
@@ -103,6 +103,16 @@ void en_coincidence()
 			if (pid->at(j)==11 && id->at(j)==401) {eHANDVeto = true;}
 			if (pid->at(j)==22 && id->at(j)==400) {gHAND = true;}
 			if (pid->at(j)==22 && id->at(j)==401) {gHANDVeto = true;}
+*/
+			if (pid->at(j)==2112 && id->at(j)>4099) {nHAND = true;}
+			if (pid->at(j)==2112 && id->at(j)>3999 && id->at(j)<4100) {nHANDVeto = true;}
+			if (pid->at(j)==2212 && id->at(j)>4099) {pHAND = true;}
+			if (pid->at(j)==2212 && id->at(j)>3999 && id->at(j)<4100) {pHANDVeto = true;}
+			if (pid->at(j)==11 && id->at(j)>4099) {eHAND = true;}
+			if (pid->at(j)==11 && id->at(j)>3999 && id->at(j)<4100) {eHANDVeto = true;}
+			if (pid->at(j)==22 && id->at(j)>4099) {gHAND = true;}
+			if (pid->at(j)==22 && id->at(j)>3999 && id->at(j)<4100) {gHANDVeto = true;}
+
 			if (pid->at(j)==11 && (id->at(j)==100 || id->at(j)==101 || id->at(j)==102 || id->at(j)==103 || id->at(j)==104 || id->at(j)==105)) {eRHRS = true;}
 		}
 		if (nHAND) {n++;}
