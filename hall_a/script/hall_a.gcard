@@ -10,7 +10,7 @@
 	<option name="SPREAD_P" value="0.001*GeV, 0.0*deg, 0.0*deg"/>
 	<!-- option name="PHYSICS" value="QGSP_BERT + STD + Optical"/ -->
 	<option name="PHYSICS" value="QGSP_BERT + EMV"/>
-	<option name="N" value="10000"/>
+	<option name="N" value="1000"/>
 	<option name="INTEGRATEDRAW" value="flux"/>
 	
 </gcard>
