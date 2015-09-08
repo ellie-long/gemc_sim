@@ -30,10 +30,10 @@ our %configuration = load_configuration($ARGV[0]);
 my $basemat="Air_Opt";
 #my $basemat="Vacuum";
 
-#my $magfield="1.1759";
+my $magfield="1.1759";
 ##my $magfield="1.17591";
 #my $magfield="2.18130";
-my $magfield="3.0855";
+#my $magfield="3.0855";
 
 #my $test=0;
 my $test=1;
@@ -197,6 +197,8 @@ sub build_3he_target
 	$target{"type"}        = "Tube";
 	$target{"dimensions"}  = "0*cm 0.6*cm 20*cm 0*deg 360*deg";
 	$target{"material"}    = "3He_Cell";
+#	$target{"dimensions"}  = "0*cm 0.6*cm 0.5*cm 0*deg 360*deg";
+#	$target{"material"}    = "3He_GlassCell";
 	$target{"visible"}     = 1;
 	$target{"style"}       = 1;
 	print_det(\%configuration, \%target);

@@ -66,8 +66,23 @@ sub define_3HeCell
 	print_mat(\%configuration, \%mat);
 }
 
+sub define_3HeGlassCell
+{
+	# 3He Target Cell
+	my %mat = init_mat();
+	$mat{"name"}          = "3He_GlassCell";
+	$mat{"description"}   = "Helium 3 Glass Cell";
+	$mat{"density"}       = "33.376";  # in g/cm3
+#	$mat{"density"}       = "2.52";  # in g/cm3 (Density of glass)
+	$mat{"ncomponents"}   = "1";
+#	$mat{"components"}    = "He 2";
+#	$mat{"components"}    = "helium3Gas 2";
+	$mat{"components"}    = "helium3Gas 1";
+	print_mat(\%configuration, \%mat);
+}
 
 
 
 define_scintillator();
 define_3HeCell();
+define_3HeGlassCell();
