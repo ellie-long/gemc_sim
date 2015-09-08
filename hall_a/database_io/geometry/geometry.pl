@@ -30,13 +30,13 @@ our %configuration = load_configuration($ARGV[0]);
 my $basemat="Air_Opt";
 #my $basemat="Vacuum";
 
-my $magfield="1.1759";
+#my $magfield="1.1759";
 ##my $magfield="1.17591";
 #my $magfield="2.18130";
 #my $magfield="3.0855";
 
-#my $test=0;
-my $test=1;
+my $test=0;
+#my $test=1;
 
 if ($test eq 1)
 {
@@ -59,7 +59,21 @@ $dummyDbl=$rhrsAngle;
 $dummyDbl=$rhrsAngle+0.0;
 $rhrsAngle=$dummyDbl;
 
+# Get beam energy from input file
+my $beamE=0.0;
+my $magfield="0";
+open my $inputMagFile, '<', "beame.txt" or die $!;
+while (<$inputMagFile>){
+    if ($beamE==0) {$beamE=$_;}
+}
+close $inputMagFile or die $!;
+
+if ($beamE == 1.2450) { $magfield = "1.1759";}
+if ($beamE == 2.4250) { $magfield = "2.18130";}
+if ($beamE == 3.6050) { $magfield = "3.0855";}
+
 printf "\n\n******************************************\n";
+printf "Beam Energy: %.2f GeV\n", $beamE;
 printf "RHRS Angle: %.2f degrees\n", $rhrsAngle;
 printf "RHRS Momentum Setting: ".$magfield." GeV\n";
 printf "Hall Material: " .$basemat."\n";
@@ -466,7 +480,7 @@ sub build_eleShieldHouse
 	$shield1{"dimensions"} 	= "250*cm 500*cm 50*cm";
 	$shield1{"material"}    = "G4_Pb";
 	$shield1{"visible"}    	= 1;
-	$shield1{"style"}      	= 1;
+	$shield1{"style"}      	= 0;
 	print_det(\%configuration, \%shield1);
 
 	my %shield2 = init_det();
@@ -480,7 +494,7 @@ sub build_eleShieldHouse
 	$shield2{"dimensions"} 	= "50*cm 500*cm 500*cm";
 	$shield2{"material"}    = "G4_Pb";
 	$shield2{"visible"}    	= 1;
-	$shield2{"style"}      	= 1;
+	$shield2{"style"}      	= 0;
 	print_det(\%configuration, \%shield2);
 
 	my %shield3 = init_det();
@@ -508,7 +522,7 @@ sub build_eleShieldHouse
 	$shield4{"dimensions"} 	= "100*cm 5*cm 500*cm";
 	$shield4{"material"}    = "G4_Pb";
 	$shield4{"visible"}    	= 1;
-	$shield4{"style"}      	= 1;
+	$shield4{"style"}      	= 0;
 	print_det(\%configuration, \%shield4);
 
 	my %shield5 = init_det();
@@ -522,7 +536,7 @@ sub build_eleShieldHouse
 	$shield5{"dimensions"} 	= "100*cm 5*cm 500*cm";
 	$shield5{"material"}    = "G4_Pb";
 	$shield5{"visible"}    	= 1;
-	$shield5{"style"}      	= 1;
+	$shield5{"style"}      	= 0;
 	print_det(\%configuration, \%shield5);
 
 	my %shield7 = init_det();
@@ -536,7 +550,7 @@ sub build_eleShieldHouse
 	$shield7{"dimensions"} 	= "250*cm 5*cm 280*cm";
 	$shield7{"material"}    = "G4_Pb";
 	$shield7{"visible"}    	= 1;
-	$shield7{"style"}      	= 1;
+	$shield7{"style"}      	= 0;
 	print_det(\%configuration, \%shield7);
 
 	my %shield6 = init_det();
@@ -550,7 +564,7 @@ sub build_eleShieldHouse
 	$shield6{"dimensions"} 	= "250*cm 50*cm 500*cm";
 	$shield6{"material"}    = "G4_Pb";
 	$shield6{"visible"}    	= 1;
-	$shield6{"style"}      	= 1;
+	$shield6{"style"}      	= 0;
 	print_det(\%configuration, \%shield6);
 
 	my %shield8 = init_det();
@@ -564,7 +578,7 @@ sub build_eleShieldHouse
 	$shield8{"dimensions"} 	= "250*cm 500*cm 50*cm";
 	$shield8{"material"}    = "G4_Pb";
 	$shield8{"visible"}    	= 1;
-	$shield8{"style"}      	= 1;
+	$shield8{"style"}      	= 0;
 	print_det(\%configuration, \%shield8);
 
 }
@@ -847,176 +861,373 @@ sub build_hand
 	$hand{"color"}       = "969696";
 	$hand{"type"}        = "Box";
 #	$hand{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$hand{"dimensions"}  = "50*cm 160*cm 35*cm";
+	$hand{"dimensions"}  = "55*cm 160*cm 50*cm";
 	$hand{"material"}    = $basemat;
 	$hand{"visible"}     = 1;
 	$hand{"style"}       = 0;
 	print_det(\%configuration, \%hand);
 
-	my %handscint = init_det();
-	$handscint{"name"}        = "hand_scint";
-#	$handscint{"mother"}      = "root";
-	$handscint{"mother"}      = "hand";
-	$handscint{"description"} = "Hall A Neutron Detector Scintillator";
-#                                 x      y     z where z=beam direction, y=Ay0 direction
-	$handscint{"pos"}         = "0*cm 0*cm 0*cm";
-	$handscint{"rotation"}    = "0*deg 0*deg 0*deg";
-	$handscint{"color"}       = "969696";
-	$handscint{"type"}        = "Box";
-#	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
-	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
-	$handscint{"material"}    = "scintillator";
-	$handscint{"visible"}     = 1;
-	$handscint{"style"}       = 1;
-	$handscint{"sensitivity"} = "flux";
-	$handscint{"hit_type"} 	 = "flux";
-	$handscint{"identifiers"} = "id manual 400";
-	print_det(\%configuration, \%handscint);
+#	my %handscint = init_det();
+#	$handscint{"name"}        = "hand_scint";
+##	$handscint{"mother"}      = "root";
+#	$handscint{"mother"}      = "hand";
+#	$handscint{"description"} = "Hall A Neutron Detector Scintillator";
+##                                 x      y     z where z=beam direction, y=Ay0 direction
+#	$handscint{"pos"}         = "0*cm 0*cm 0*cm";
+#	$handscint{"rotation"}    = "0*deg 0*deg 0*deg";
+#	$handscint{"color"}       = "969696";
+#	$handscint{"type"}        = "Box";
+##	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
+#	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
+#	$handscint{"material"}    = "scintillator";
+#	$handscint{"visible"}     = 1;
+#	$handscint{"style"}       = 1;
+#	$handscint{"sensitivity"} = "flux";
+#	$handscint{"hit_type"} 	  = "flux";
+#	$handscint{"identifiers"} = "id manual 400";
+#	print_det(\%configuration, \%handscint);
 
-	my %handVetoTop = init_det();
-	$handVetoTop{"name"}        = "veto_top";
-#	$handVetoTop{"mother"}      = "root";
-	$handVetoTop{"mother"}      = "hand";
-	$handVetoTop{"description"} = "Hall A Neutron Detector Scintillator";
-#                                 x      y     z where z=beam direction, y=Ay0 direction
-	$handVetoTop{"pos"}         = "0*cm 95*cm -24*cm";
-	$handVetoTop{"rotation"}    = "0*deg 0*deg 0*deg";
-	$handVetoTop{"color"}       = "969696";
-	$handVetoTop{"type"}        = "Box";
-#	$handVetoTop{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$handVetoTop{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$handVetoTop{"material"}    = "scintillator";
-	$handVetoTop{"visible"}     = 1;
-	$handVetoTop{"style"}       = 1;
-	$handVetoTop{"sensitivity"} = "flux";
-	$handVetoTop{"hit_type"} 	 = "flux";
-	$handVetoTop{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%handVetoTop);
+	# Making HAND plane 1
+	my $idnum = 4101;
+	my $ypos = 145;
+	my $color = "0000FF";
+	my %handp1 = init_det();
+	for (my $bar=0; $bar<30; $bar++)
+	{
+		if ($bar%2==0) {$color = "0000FF";}
+		else {$color = "0080FF";}
+		$handp1{"name"}			= "hand_p1_b$bar";
+		$handp1{"mother"}		= "hand";
+		$handp1{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#	                                 x      y     z where z=beam direction, y=Ay0 direction
+		$handp1{"pos"}			= "0*cm $ypos*cm -15*cm";
+		$handp1{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp1{"color"}		= $color;
+		$handp1{"type"}			= "Box";
+		$handp1{"dimensions"}	= "50*cm 5*cm 5*cm";
+		$handp1{"material"}		= "scintillator";
+		$handp1{"visible"}		= 1;
+		$handp1{"style"}		= 1;
+		$handp1{"sensitivity"}	= "flux";
+		$handp1{"hit_type"}		= "flux";
+		$handp1{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp1);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 10;
+	}
 
-	my %handVetoBot = init_det();
-	$handVetoBot{"name"}        = "veto_bot";
-#	$handVetoBot{"mother"}      = "root";
-	$handVetoBot{"mother"}      = "hand";
-	$handVetoBot{"description"} = "Hall A Neutron Detector Scintillator";
-#                                 x      y     z where z=beam direction, y=Ay0 direction
-	$handVetoBot{"pos"}         = "0*cm -95*cm -24*cm";
-	$handVetoBot{"rotation"}    = "0*deg 0*deg 0*deg";
-	$handVetoBot{"color"}       = "969696";
-	$handVetoBot{"type"}        = "Box";
-#	$handVetoBot{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$handVetoBot{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$handVetoBot{"material"}    = "scintillator";
-	$handVetoBot{"visible"}     = 1;
-	$handVetoBot{"style"}       = 1;
-	$handVetoBot{"sensitivity"} = "flux";
-	$handVetoBot{"hit_type"} 	 = "flux";
-	$handVetoBot{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%handVetoBot);
+	# Making HAND plane 2
+	$idnum = 4201;
+	$ypos = 143.75;
+	my %handp2 = init_det();
+	for (my $bar=0; $bar<24; $bar++)
+	{
+		if ($bar%2==0) {$color = "00FFFF";}
+		else {$color = "A9F5F2";}
+		$handp2{"name"}			= "hand_p2_b$bar";
+		$handp2{"mother"}		= "hand";
+		$handp2{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp2{"pos"}			= "0*cm $ypos*cm -5*cm";
+		$handp2{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp2{"color"}		= $color;
+		$handp2{"type"}			= "Box";
+		$handp2{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp2{"material"}		= "scintillator";
+		$handp2{"visible"}		= 1;
+		$handp2{"style"}		= 1;
+		$handp2{"sensitivity"}	= "flux";
+		$handp2{"hit_type"}		= "flux";
+		$handp2{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp2);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 12.5;
+	}
 
-	my %handVetoMid = init_det();
-	$handVetoMid{"name"}        = "veto_mid";
-#	$handVetoMid{"mother"}      = "root";
-	$handVetoMid{"mother"}      = "hand";
-	$handVetoMid{"description"} = "Hall A Neutron Detector Scintillator";
-#                                 x      y     z where z=beam direction, y=Ay0 direction
-	$handVetoMid{"pos"}         = "0*cm 0*cm -29*cm";
-	$handVetoMid{"rotation"}    = "0*deg 0*deg 0*deg";
-	$handVetoMid{"color"}       = "969696";
-	$handVetoMid{"type"}        = "Box";
-#	$handVetoMid{"dimensions"}  = "100*cm 320*cm 40*cm";
-	$handVetoMid{"dimensions"}  = "50*cm 55*cm 2*cm";
-	$handVetoMid{"material"}    = "scintillator";
-	$handVetoMid{"visible"}     = 1;
-	$handVetoMid{"style"}       = 1;
-	$handVetoMid{"sensitivity"} = "flux";
-	$handVetoMid{"hit_type"} 	 = "flux";
-	$handVetoMid{"identifiers"} = "id manual 401";
-	print_det(\%configuration, \%handVetoMid);
+	# Making HAND plane 3
+	$idnum = 4301;
+	$ypos = 142.5;
+	my %handp3 = init_det();
+	for (my $bar=0; $bar<6; $bar++)
+	{
+		if ($bar%2==0) {$color = "FF0000";}
+		else {$color = "FF0080";}
+		$handp3{"name"}			= "hand_p3_b$bar";
+		$handp3{"mother"}		= "hand";
+		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp3{"pos"}			= "0*cm $ypos*cm 5*cm";
+		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp3{"color"}		= $color;
+		$handp3{"type"}			= "Box";
+		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
+		$handp3{"material"}		= "scintillator";
+		$handp3{"visible"}		= 1;
+		$handp3{"style"}		= 1;
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 15;
+	}
+	$ypos = 53.75;
+	for (my $bar=6; $bar<10; $bar++)
+	{
+		if ($bar%2==0) {$color = "00FFFF";}
+		else {$color = "A9F5F2";}
+		$handp3{"name"}			= "hand_p3_b$bar";
+		$handp3{"mother"}		= "hand";
+		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp3{"pos"}			= "0*cm $ypos*cm 5*cm";
+		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp3{"color"}		= $color;
+		$handp3{"type"}			= "Box";
+		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp3{"material"}		= "scintillator";
+		$handp3{"visible"}		= 1;
+		$handp3{"style"}		= 1;
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 12.5;
+	}
+	$ypos = 5;
+	for (my $bar=10; $bar<12; $bar++)
+	{
+		if ($bar%2==0) {$color = "0000FF";}
+		else {$color = "0080FF";}
+		$handp3{"name"}			= "hand_p3_b$bar";
+		$handp3{"mother"}		= "hand";
+		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp3{"pos"}			= "0*cm $ypos*cm 5*cm";
+		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp3{"color"}		= $color;
+		$handp3{"type"}			= "Box";
+		$handp3{"dimensions"}	= "50*cm 5*cm 5*cm";
+		$handp3{"material"}		= "scintillator";
+		$handp3{"visible"}		= 1;
+		$handp3{"style"}		= 1;
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 10;
+	}
+	$ypos = -16.25;
+	for (my $bar=12; $bar<16; $bar++)
+	{
+		if ($bar%2==0) {$color = "00FFFF";}
+		else {$color = "A9F5F2";}
+		$handp3{"name"}			= "hand_p3_b$bar";
+		$handp3{"mother"}		= "hand";
+		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp3{"pos"}			= "0*cm $ypos*cm 5*cm";
+		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp3{"color"}		= $color;
+		$handp3{"type"}			= "Box";
+		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp3{"material"}		= "scintillator";
+		$handp3{"visible"}		= 1;
+		$handp3{"style"}		= 1;
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 12.5;
+	}
+	$ypos = -67.5;
+	for (my $bar=16; $bar<22; $bar++)
+	{
+		if ($bar%2==0) {$color = "FF0000";}
+		else {$color = "FF0080";}
+		$handp3{"name"}			= "hand_p3_b$bar";
+		$handp3{"mother"}		= "hand";
+		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp3{"pos"}			= "0*cm $ypos*cm 5*cm";
+		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp3{"color"}		= $color;
+		$handp3{"type"}			= "Box";
+		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
+		$handp3{"material"}		= "scintillator";
+		$handp3{"visible"}		= 1;
+		$handp3{"style"}		= 1;
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 15;
+	}
 
+	# Making HAND plane 4
+	$idnum = 4401;
+	$ypos = 137.5;
+	my %handp4 = init_det();
+	for (my $bar=0; $bar<12; $bar++)
+	{
+		if ($bar%2==0) {$color = "00FF00";}
+		else {$color = "80FF00";}
+		$handp4{"name"}			= "hand_p4_b$bar";
+		$handp4{"mother"}		= "hand";
+		$handp4{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
+#   	                              x      y     z where z=beam direction, y=Ay0 direction
+		$handp4{"pos"}			= "0*cm $ypos*cm 15*cm";
+		$handp4{"rotation"}		= "0*deg 0*deg 0*deg";
+		$handp4{"color"}		= $color;
+		$handp4{"type"}			= "Box";
+		$handp4{"dimensions"}	= "50*cm 12.5*cm 5*cm";
+		$handp4{"material"}		= "scintillator";
+		$handp4{"visible"}		= 1;
+		$handp4{"style"}		= 1;
+		$handp4{"sensitivity"}	= "flux";
+		$handp4{"hit_type"}		= "flux";
+		$handp4{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp4);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 25;
+	}
+
+
+	# Making HAND veto layer (p0)
+	$idnum = 4001;
+	$ypos = 144.5;
+	my %handp4 = init_det();
+	for (my $bar=0; $bar<10; $bar++)
+	{
+		if ($bar%2==0) {$color = "FF00FF";}
+		else {$color = "F781F3";}
+		my %handp0 = init_det();
+		$handp0{"name"}			= "hand_p0_b$bar";
+		$handp0{"mother"}		= "hand";
+		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
+#   							x	  y		 z 	where z=beam direction, y=Ay0 direction
+		$handp0{"pos"} 			= "0*cm $ypos*cm -24*cm";
+		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
+		$handp0{"color"} 		= $color;
+		$handp0{"type"} 		= "Box";
+		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"material"} 	= "scintillator";
+		$handp0{"visible"} 		= 1;
+		$handp0{"style"} 		= 1;
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 11;
+	}
+	$ypos = 60.5;
+	for (my $bar=10; $bar<22; $bar++)
+	{
+		if ($bar%2==0) {$color = "FF00FF";}
+		else {$color = "F781F3";}
+		my %handp0 = init_det();
+		$handp0{"name"}			= "hand_p0_b$bar";
+		$handp0{"mother"}		= "hand";
+		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
+#   							x	  y		 z 	where z=beam direction, y=Ay0 direction
+		$handp0{"pos"} 			= "0*cm $ypos*cm -29*cm";
+		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
+		$handp0{"color"} 		= $color;
+		$handp0{"type"} 		= "Box";
+		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"material"} 	= "scintillator";
+		$handp0{"visible"} 		= 1;
+		$handp0{"style"} 		= 1;
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 11;
+	}
+	$ypos = -45.5;
+	for (my $bar=22; $bar<32; $bar++)
+	{
+		if ($bar%2==0) {$color = "FF00FF";}
+		else {$color = "F781F3";}
+		my %handp0 = init_det();
+		$handp0{"name"}			= "hand_p0_b$bar";
+		$handp0{"mother"}		= "hand";
+		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
+#   							x	  y		 z 	where z=beam direction, y=Ay0 direction
+		$handp0{"pos"} 			= "0*cm $ypos*cm -24*cm";
+		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
+		$handp0{"color"} 		= $color;
+		$handp0{"type"} 		= "Box";
+		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"material"} 	= "scintillator";
+		$handp0{"visible"} 		= 1;
+		$handp0{"style"} 		= 1;
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
+		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
+		$ypos = $ypos - 11;
+	}
 }
 
 sub build_pbwall
 {
 
-	my $deg				= 62.5-$rhrsAngle;
-	my $rot				= -$deg;
-	my $r				= 500;
-	my $angle			= $deg*0.0174532925; # Degree -> Radians
-	my $x				= $r*sin($angle);
-	my $z				= $r*cos($angle);
-	my $xstr			= sprintf("%.5f", $x);
-	my $zstr			= sprintf("%.5f", $z);
-	my $rotstr			= sprintf("%.5f", $z);
-	my $hand_placement	= "";
-	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
-	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
-
-	if($magfield == "1.1759")
-	{
-		$deg			= 71.0-$rhrsAngle;
-		$rot			= -$deg;
-		$r				= 600;
-		$angle			= $deg*0.0174532925; # Degree -> Radians
-		$x				= $r*sin($angle);
-		$z				= $r*cos($angle);
-		$xstr			= sprintf("%.5f", $x);
-		$zstr			= sprintf("%.5f", $z);
-		$rotstr			= sprintf("%.5f", $z);
-		$hand_placement	= "";
-		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
-		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
-
-	}
-	if($magfield == "2.18130")
-	{
-		$deg			= 62.5-$rhrsAngle;
-		$rot			= -$deg;
-		$r				= 600;
-		$angle			= $deg*0.0174532925; # Degree -> Radians
-		$x				= $r*sin($angle);
-		$z				= $r*cos($angle);
-		$xstr			= sprintf("%.5f", $x);
-		$zstr			= sprintf("%.5f", $z);
-		$rotstr			= sprintf("%.5f", $z);
-		$hand_placement	= "";
-		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
-		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
-
-	}
-	if($magfield == "3.0855")
-	{
-		$deg			= 54.0-$rhrsAngle;
-		$rot			= -$deg;
-		$r				= 600;
-		$angle			= $deg*0.0174532925; # Degree -> Radians
-		$x				= $r*sin($angle);
-		$z				= $r*cos($angle);
-		$xstr			= sprintf("%.5f", $x);
-		$zstr			= sprintf("%.5f", $z);
-		$rotstr			= sprintf("%.5f", $z);
-		$hand_placement	= "";
-		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
-		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
-
-	}
-
-
-	printf("HAND Pb Wall Placement: $hand_placement\n");
-
 	my %pbwall = init_det();
 	$pbwall{"name"}        = "lead_wall";
-	$pbwall{"mother"}      = "hall_a";
+#	$pbwall{"mother"}      = "hall_a";
+	$pbwall{"mother"}      = "hand";
 	$pbwall{"description"} = "Hall A Neutron Detector - Pb Wall";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$pbwall{"pos"}         = $hand_placement;
-	$pbwall{"rotation"}    = $hand_rotation;
-	$pbwall{"color"}       = "B7410E";
+	$pbwall{"pos"}         = "0*cm 0*cm -40*cm";
+	$pbwall{"rotation"}    = "0*deg";
+	$pbwall{"color"}       = "8D8A87";
 	$pbwall{"type"}        = "Box";
-	$pbwall{"dimensions"}  = "100*cm 160*cm 5*cm";
+	$pbwall{"dimensions"}  = "50*cm 150*cm 2.54*cm";
 	$pbwall{"material"}    = "G4_Pb";
 	$pbwall{"visible"}     = 1;
 	$pbwall{"style"}       = 1;
 	print_det(\%configuration, \%pbwall);
+
+	my %pbwallfront = init_det();
+	$pbwallfront{"name"}        = "lead_wall_front";
+#	$pbwallfront{"mother"}      = "hall_a";
+	$pbwallfront{"mother"}      = "hand";
+	$pbwallfront{"description"} = "Hall A Neutron Detector - Pb Wall Front (Iron Shell)";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$pbwallfront{"pos"}         = "0*cm 0*cm -43.55*cm";
+	$pbwallfront{"rotation"}    = "0*deg";
+	$pbwallfront{"color"}       = "B7410E";
+	$pbwallfront{"type"}        = "Box";
+	$pbwallfront{"dimensions"}  = "50*cm 150*cm 1*cm";
+	$pbwallfront{"material"}    = "G4_Fe";
+	$pbwallfront{"visible"}     = 1;
+	$pbwallfront{"style"}       = 1;
+
+	print_det(\%configuration, \%pbwallfront);
+	my %pbwallback = init_det();
+	$pbwallback{"name"}        = "lead_wall_back";
+#	$pbwallback{"mother"}      = "hall_a";
+	$pbwallback{"mother"}      = "hand";
+	$pbwallback{"description"} = "Hall A Neutron Detector - Pb Wall Back (Iron Shell)";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$pbwallback{"pos"}         = "0*cm 0*cm -36.45*cm";
+	$pbwallback{"rotation"}    = "0*deg";
+	$pbwallback{"color"}       = "B7410E";
+	$pbwallback{"type"}        = "Box";
+	$pbwallback{"dimensions"}  = "50*cm 150*cm 1*cm";
+	$pbwallback{"material"}    = "G4_Fe";
+	$pbwallback{"visible"}     = 1;
+	$pbwallback{"style"}       = 1;
+	print_det(\%configuration, \%pbwallback);
+
 
 #	%detector = init_det();
 #	$detector{"name"}        = "dummy_hand";
@@ -1041,7 +1252,7 @@ sub build_pbwall
 build_hall();
 #build_beampipe();
 build_hand();
-#build_pbwall();
+build_pbwall();
 build_rhrs();
 build_eleShieldHouse();
 build_eleDetector();

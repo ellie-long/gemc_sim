@@ -6,7 +6,12 @@ set now=`date +"%Y-%m-%d-%T.%4N"`
 #set now="$PBS_JOBID"
 printf "$now\n"
 
+echo "1.2450" >> beame.txt
+#echo "2.4250" >> beame.txt
+#echo "3.6050" >> beame.txt
+
 set beamv=`cat temp_beamv.txt`
+set beame=`cat beame.txt`
 set rhrsAngleIn=`cat rhrsAngle.txt`
 set rhrsAngle=`echo "$rhrsAngleIn * -1" | bc`
 set outFolder="../output"
@@ -37,7 +42,8 @@ gemc \
 #-DBUSER=root \
 #-BEAM_P="e-, 1.2450*GeV, $rhrsAngle*deg, 0*deg" \
 #-BEAM_P="e-, 2.4250*GeV, $rhrsAngle*deg, 0*deg" \
--BEAM_P="e-, 3.6050*GeV, $rhrsAngle*deg, 0*deg" \
+-BEAM_P="e-, $beame*GeV, $rhrsAngle*deg, 0*deg" \
+#-BEAM_P="neutron, 0.5*GeV, $rhrsAngle*deg, 0*deg" \
 -BEAM_V="$beamv" \
 -HALL_MATERIAL=Vacuum \
 -HALL_DIMENSIONS="40*m, 40*m, 40*m" \
