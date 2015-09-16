@@ -1100,12 +1100,11 @@ sub build_hand
 	# Making HAND veto layer (p0)
 	$idnum = 4001;
 	$ypos = 144.5;
-	my %handp4 = init_det();
+	my %handp0 = init_det();
 	for (my $bar=0; $bar<10; $bar++)
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		my %handp0 = init_det();
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1130,7 +1129,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		my %handp0 = init_det();
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1155,7 +1153,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		my %handp0 = init_det();
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1256,4 +1253,4 @@ build_pbwall();
 build_rhrs();
 build_eleShieldHouse();
 build_eleDetector();
-build_3he_target();
+#build_3he_target();

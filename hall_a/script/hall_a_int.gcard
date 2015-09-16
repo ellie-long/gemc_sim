@@ -7,10 +7,10 @@
 	<!-- option name="BEAM_V" value="(0, 0, -525)cm"/ -->
 	<!-- option name="BEAM_V" value="(-7.3092926, 0, -523.907619)cm"/ -->
 	<option name="SPREAD_V" value="(2,-2)mm"/>
-	<option name="SPREAD_P" value="0.001*GeV, 0.0*deg, 0.0*deg"/>
+	<!-- option name="SPREAD_P" value="0.001*GeV, 0.0*deg, 0.0*deg"/ -->
 	<!-- option name="PHYSICS" value="QGSP_BERT + STD + Optical"/ -->
 	<option name="PHYSICS" value="QGSP_BERT + EMV"/>
-	<option name="N" value="1"/>
+	<!-- option name="N" value="1"/ -->
 	<option name="INTEGRATEDRAW" value="flux"/>
 	
 </gcard>
