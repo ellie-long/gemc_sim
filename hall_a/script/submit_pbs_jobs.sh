@@ -7,8 +7,8 @@ read lines;
 printf $lines | tee -a $subStatus;
 ./prep_gemc.csh | tee -a $subStatus;
 
-batchSize=100000000;
-#batchSize=10000;
+#batchSize=100000000;
+batchSize=10000;
 #batchSize=152;
 #batchSize=8;
 numBatches=`echo $lines/$batchSize | bc`;

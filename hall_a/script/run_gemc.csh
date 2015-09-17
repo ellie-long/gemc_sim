@@ -32,7 +32,8 @@ gemc \
 #-gcard=hall_a_mysql.gcard \
 #-BANK_DATABASE=user_banks \
 -USE_GUI=0 \
--BEAM_P="neutron, 1.05507*GeV, 71*deg, 0*deg" \
+#-BEAM_P="neutron, 1.05507*GeV, 71*deg, 0*deg" \
+-BEAM_P="proton, 1.05507*GeV, 71*deg, 0*deg" \
 -SPREAD_P="0.0296188*GeV, 10.0*deg, 10.0*deg" \
 #-EXEC_MACRO=g4_settings.config \
 #-N=10 \
