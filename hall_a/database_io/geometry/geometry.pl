@@ -27,8 +27,8 @@ if( scalar @ARGV != 1)
 # Loading configuration file (first argument)
 our %configuration = load_configuration($ARGV[0]);
 
-my $basemat="Air_Opt";
-#my $basemat="Vacuum";
+#my $basemat="Air_Opt";
+my $basemat="Vacuum";
 
 #my $magfield="1.1759";
 ##my $magfield="1.17591";
@@ -784,9 +784,120 @@ sub build_eleDetector
 
 }
 
-sub build_hand
+sub build_simple_hand
 {
 	my $deg				= 62.5-$rhrsAngle;
+	my $rot				= -$deg;
+	my $r				= 600;
+	my $angle			= $deg*0.0174532925; # Degree -> Radians
+	my $x				= $r*sin($angle);
+	my $z				= $r*cos($angle);
+	my $xstr			= sprintf("%.5f", $x);
+	my $zstr			= sprintf("%.5f", $z);
+	my $rotstr			= sprintf("%.5f", $z);
+	my $hand_placement	= "";
+	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	if($magfield == "1.1759")
+	{
+		$deg			= 71.0-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "2.18130")
+	{
+		$deg			= 62.5-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+	if($magfield == "3.0855")
+	{
+		$deg			= 54.0-$rhrsAngle;
+		$rot			= -$deg;
+		$r				= 600;
+		$angle			= $deg*0.0174532925; # Degree -> Radians
+		$x				= $r*sin($angle);
+		$z				= $r*cos($angle);
+		$xstr			= sprintf("%.5f", $x);
+		$zstr			= sprintf("%.5f", $z);
+		$rotstr			= sprintf("%.5f", $z);
+		$hand_placement	= "";
+		$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
+		$hand_rotation	= "0*deg ".$rot."*deg 0*deg";
+
+	}
+
+	printf("HAND Placement: $hand_placement\n");
+
+	my %hand = init_det();
+	$hand{"name"}        = "hand";
+#	$hand{"mother"}      = "root";
+	$hand{"mother"}      = "hall_a";
+	$hand{"description"} = "Hall A Neutron Detector";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$hand{"pos"}         = $hand_placement;
+	$hand{"rotation"}    = $hand_rotation;
+	$hand{"color"}       = "969696";
+	$hand{"type"}        = "Box";
+#	$hand{"dimensions"}  = "100*cm 320*cm 40*cm";
+	$hand{"dimensions"}  = "55*cm 160*cm 50*cm";
+	$hand{"material"}    = $basemat;
+	$hand{"visible"}     = 1;
+	$hand{"style"}       = 0;
+	print_det(\%configuration, \%hand);
+
+	my %handscint = init_det();
+	$handscint{"name"}        = "hand_scint";
+#	$handscint{"mother"}      = "root";
+	$handscint{"mother"}      = "hand";
+	$handscint{"description"} = "Hall A Neutron Detector Scintillator";
+#                                 x      y     z where z=beam direction, y=Ay0 direction
+	$handscint{"pos"}         = "0*cm 0*cm 0*cm";
+	$handscint{"rotation"}    = "0*deg 0*deg 0*deg";
+	$handscint{"color"}       = "969696";
+	$handscint{"type"}        = "Box";
+#	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
+	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
+#	$handscint{"material"}    = "scintillator";
+	$handscint{"material"}    = "$basemat";
+	$handscint{"visible"}     = 1;
+	$handscint{"style"}       = 1;
+	$handscint{"sensitivity"} = "flux";
+	$handscint{"hit_type"} 	  = "flux";
+	$handscint{"identifiers"} = "id manual 400";
+	print_det(\%configuration, \%handscint);
+}
+
+
+sub build_hand
+{
+#	my $handmat			= "scintillator";
+	my $handmat			= "G4_PLASTIC_SC_VINYLTOLUENE";
+#	my $handmat			= "G4_PbWO4";
+#	my $handmat			= "$basemat";
+#	my $deg				= 62.5-$rhrsAngle;
+	my $deg				= 0;
 	my $rot				= -$deg;
 	my $r				= 600;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
@@ -879,7 +990,7 @@ sub build_hand
 #	$handscint{"type"}        = "Box";
 ##	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
 #	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
-#	$handscint{"material"}    = "scintillator";
+#	$handscint{"material"}    = "$handmat";
 #	$handscint{"visible"}     = 1;
 #	$handscint{"style"}       = 1;
 #	$handscint{"sensitivity"} = "flux";
@@ -904,8 +1015,9 @@ sub build_hand
 		$handp1{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp1{"color"}		= $color;
 		$handp1{"type"}			= "Box";
-		$handp1{"dimensions"}	= "50*cm 5*cm 5*cm";
-		$handp1{"material"}		= "scintillator";
+#		$handp1{"dimensions"}	= "50*cm 5*cm 5*cm";
+		$handp1{"dimensions"}	= "50*cm 4.9*cm 4.9*cm";
+		$handp1{"material"}		= "$handmat";
 		$handp1{"visible"}		= 1;
 		$handp1{"style"}		= 1;
 		$handp1{"sensitivity"}	= "flux";
@@ -932,8 +1044,9 @@ sub build_hand
 		$handp2{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp2{"color"}		= $color;
 		$handp2{"type"}			= "Box";
-		$handp2{"dimensions"}	= "50*cm 6.25*cm 5*cm";
-		$handp2{"material"}		= "scintillator";
+#		$handp2{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp2{"dimensions"}	= "50*cm 6.15*cm 4.9*cm";
+		$handp2{"material"}		= "$handmat";
 		$handp2{"visible"}		= 1;
 		$handp2{"style"}		= 1;
 		$handp2{"sensitivity"}	= "flux";
@@ -960,8 +1073,9 @@ sub build_hand
 		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp3{"color"}		= $color;
 		$handp3{"type"}			= "Box";
-		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
-		$handp3{"material"}		= "scintillator";
+#		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
+		$handp3{"dimensions"}	= "50*cm 7.4*cm 4.9*cm";
+		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
 		$handp3{"sensitivity"}	= "flux";
@@ -984,8 +1098,9 @@ sub build_hand
 		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp3{"color"}		= $color;
 		$handp3{"type"}			= "Box";
-		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
-		$handp3{"material"}		= "scintillator";
+#		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp3{"dimensions"}	= "50*cm 6.15*cm 4.9*cm";
+		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
 		$handp3{"sensitivity"}	= "flux";
@@ -1008,8 +1123,9 @@ sub build_hand
 		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp3{"color"}		= $color;
 		$handp3{"type"}			= "Box";
-		$handp3{"dimensions"}	= "50*cm 5*cm 5*cm";
-		$handp3{"material"}		= "scintillator";
+#		$handp3{"dimensions"}	= "50*cm 5*cm 5*cm";
+		$handp3{"dimensions"}	= "50*cm 4.9*cm 4.9*cm";
+		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
 		$handp3{"sensitivity"}	= "flux";
@@ -1032,8 +1148,9 @@ sub build_hand
 		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp3{"color"}		= $color;
 		$handp3{"type"}			= "Box";
-		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
-		$handp3{"material"}		= "scintillator";
+#		$handp3{"dimensions"}	= "50*cm 6.25*cm 5*cm";
+		$handp3{"dimensions"}	= "50*cm 6.15*cm 4.9*cm";
+		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
 		$handp3{"sensitivity"}	= "flux";
@@ -1056,8 +1173,9 @@ sub build_hand
 		$handp3{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp3{"color"}		= $color;
 		$handp3{"type"}			= "Box";
-		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
-		$handp3{"material"}		= "scintillator";
+#		$handp3{"dimensions"}	= "50*cm 7.5*cm 5*cm";
+		$handp3{"dimensions"}	= "50*cm 7.4*cm 4.9*cm";
+		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
 		$handp3{"sensitivity"}	= "flux";
@@ -1084,8 +1202,9 @@ sub build_hand
 		$handp4{"rotation"}		= "0*deg 0*deg 0*deg";
 		$handp4{"color"}		= $color;
 		$handp4{"type"}			= "Box";
-		$handp4{"dimensions"}	= "50*cm 12.5*cm 5*cm";
-		$handp4{"material"}		= "scintillator";
+#		$handp4{"dimensions"}	= "50*cm 12.5*cm 5*cm";
+		$handp4{"dimensions"}	= "50*cm 12.4*cm 4.9*cm";
+		$handp4{"material"}		= "$handmat";
 		$handp4{"visible"}		= 1;
 		$handp4{"style"}		= 1;
 		$handp4{"sensitivity"}	= "flux";
@@ -1113,8 +1232,9 @@ sub build_hand
 		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
 		$handp0{"color"} 		= $color;
 		$handp0{"type"} 		= "Box";
-		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
-		$handp0{"material"} 	= "scintillator";
+#		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"dimensions"} 	= "50*cm 5.4*cm 2*cm";
+		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
 		$handp0{"sensitivity"} 	= "flux";
@@ -1137,8 +1257,9 @@ sub build_hand
 		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
 		$handp0{"color"} 		= $color;
 		$handp0{"type"} 		= "Box";
-		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
-		$handp0{"material"} 	= "scintillator";
+#		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"dimensions"} 	= "50*cm 5.4*cm 2*cm";
+		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
 		$handp0{"sensitivity"} 	= "flux";
@@ -1161,8 +1282,9 @@ sub build_hand
 		$handp0{"rotation"} 	= "0*deg 0*deg 0*deg";
 		$handp0{"color"} 		= $color;
 		$handp0{"type"} 		= "Box";
-		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
-		$handp0{"material"} 	= "scintillator";
+#		$handp0{"dimensions"} 	= "50*cm 5.5*cm 2*cm";
+		$handp0{"dimensions"} 	= "50*cm 5.4*cm 2*cm";
+		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
 		$handp0{"sensitivity"} 	= "flux";
@@ -1199,7 +1321,8 @@ sub build_pbwall
 	$pbwallfront{"mother"}      = "hand";
 	$pbwallfront{"description"} = "Hall A Neutron Detector - Pb Wall Front (Iron Shell)";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$pbwallfront{"pos"}         = "0*cm 0*cm -43.55*cm";
+#	$pbwallfront{"pos"}         = "0*cm 0*cm -43.55*cm";
+	$pbwallfront{"pos"}         = "0*cm 0*cm -43.65*cm";
 	$pbwallfront{"rotation"}    = "0*deg";
 	$pbwallfront{"color"}       = "B7410E";
 	$pbwallfront{"type"}        = "Box";
@@ -1215,7 +1338,8 @@ sub build_pbwall
 	$pbwallback{"mother"}      = "hand";
 	$pbwallback{"description"} = "Hall A Neutron Detector - Pb Wall Back (Iron Shell)";
 #                                 x      y     z where z=beam direction, y=Ay0 direction
-	$pbwallback{"pos"}         = "0*cm 0*cm -36.45*cm";
+#	$pbwallback{"pos"}         = "0*cm 0*cm -36.45*cm";
+	$pbwallback{"pos"}         = "0*cm 0*cm -36.35*cm";
 	$pbwallback{"rotation"}    = "0*deg";
 	$pbwallback{"color"}       = "B7410E";
 	$pbwallback{"type"}        = "Box";
@@ -1248,9 +1372,10 @@ sub build_pbwall
 
 build_hall();
 #build_beampipe();
+#build_simple_hand();
 build_hand();
 build_pbwall();
-build_rhrs();
-build_eleShieldHouse();
-build_eleDetector();
+#build_rhrs();
+#build_eleShieldHouse();
+#build_eleDetector();
 #build_3he_target();

@@ -8,7 +8,8 @@ printf "$now\n"
 
 #echo "1.2450" > beame.txt
 #echo "2.4250" > beame.txt
-echo "3.6050" > beame.txt
+#echo "3.6050" > beame.txt
+echo "3.6051" > beame.txt
 
 set beamv=`cat temp_beamv.txt`
 set beame=`cat beame.txt`
@@ -35,16 +36,26 @@ gemc \
 -gcard=hall_a_int.gcard \
 -OUTPUT="evio,$outEvio" \
 -FIELD_DIR=../database_io/field \
+#-BEAM_V="(0, 0, -500) cm" \
 -BEAM_V="(0, 0, -500) cm" \
+-LOG_MSG=1 \
 -HIT_VERBOSITY=1 \
+-G4TRACK_VERBOSITY=1 \
 -HALL_MATERIAL=Vacuum \
 -HALL_DIMENSIONS="40*m, 40*m, 40*m" \
 -MAX_X_POS=40000 \
 -MAX_Y_POS=40000 \
 -MAX_Z_POS=40000 \
--BEAM_P="neutron, 1.05507*GeV, 71*deg, 0*deg" \
--SPREAD_P="0.0296188*GeV, 10.0*deg, 10.0*deg" \
--N=1000 \ 
+#-MAX_X_POS=40000 \
+#-MAX_Y_POS=40000 \
+#-MAX_Z_POS=40000 \
+#-BEAM_P="proton, 1.05507*GeV, 71*deg, 0*deg" \
+-BEAM_P="proton, 1.05507*GeV, 0*deg, 0*deg" \
+#-SPREAD_P="0.0296188*GeV, 10.0*deg, 10.0*deg" \
+-SPREAD_P="0.0296188*GeV, 5.0*deg, 5.0*deg" \
+-N=1 \ 
+#-ENERGY_CUT=50 \
+#-BEAM_P="neutron, 1.05507*GeV, 71*deg, 0*deg" \
 #-USE_GUI=0 \
 #-BANK_DATABASE=user_banks \
 #-gcard=hall_a_test.gcard \

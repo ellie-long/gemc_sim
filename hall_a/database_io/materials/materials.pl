@@ -32,10 +32,11 @@ sub define_scintillator
 	# Scintillator
 	my %mat = init_mat();
 	$mat{"name"}          = "scintillator";
-	$mat{"description"}   = "simple scintillator material";
+	$mat{"description"}   = "Plastic Scintillator";
 	$mat{"density"}       = "1.032";  # in g/cm3
 	$mat{"ncomponents"}   = "2";
 	$mat{"components"}    = "C 9 H 10";
+#	$mat{"components"}    = "C 1 H 1";
 	print_mat(\%configuration, \%mat);
 }
 
