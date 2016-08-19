@@ -36,6 +36,8 @@ sub define_scintillator
 	$mat{"density"}       = "1.032";  # in g/cm3
 	$mat{"ncomponents"}   = "2";
 	$mat{"components"}    = "C 9 H 10";
+	$mat{"photonEnergy"}  = "2*eV 6*eV";
+	$mat{"indexOfRefraction"} = "1.001 1.05";
 #	$mat{"components"}    = "C 1 H 1";
 	print_mat(\%configuration, \%mat);
 }

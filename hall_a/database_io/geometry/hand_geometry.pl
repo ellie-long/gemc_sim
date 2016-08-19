@@ -7,8 +7,6 @@ use lib ("$ENV{GEMC}/io");
 use utils;
 use geometry;
 
-
-printf "vvvvvvvvvvvvvvvvvvvvvvvvv geometry.pl vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\n";
 # Define the Help Message
 sub help()
 {
@@ -881,13 +879,13 @@ sub build_simple_hand
 	$handscint{"type"}        = "Box";
 #	$handscint{"dimensions"}  = "100*cm 300*cm 40*cm";
 	$handscint{"dimensions"}  = "50*cm 150*cm 20*cm";
-	$handscint{"material"}    = "scintillator";
-#	$handscint{"material"}    = "$basemat";
+#	$handscint{"material"}    = "scintillator";
+	$handscint{"material"}    = "$basemat";
 	$handscint{"visible"}     = 1;
 	$handscint{"style"}       = 1;
-	$handscint{"sensitivity"} = "ctof";
-	$handscint{"hit_type"} 	  = "ctof";
-	$handscint{"identifiers"} = "HAND manual 400";
+	$handscint{"sensitivity"} = "flux";
+	$handscint{"hit_type"} 	  = "flux";
+	$handscint{"identifiers"} = "id manual 400";
 	print_det(\%configuration, \%handscint);
 }
 
@@ -898,11 +896,10 @@ sub build_hand
 	my $handmat			= "G4_PLASTIC_SC_VINYLTOLUENE";
 #	my $handmat			= "G4_PbWO4";
 #	my $handmat			= "$basemat";
-	my $deg				= 62.5-$rhrsAngle;
-#	my $deg				= 0;
+#	my $deg				= 62.5-$rhrsAngle;
+	my $deg				= 0;
 	my $rot				= -$deg;
-#	my $r				= 600;
-	my $r				= 400;
+	my $r				= 600;
 	my $angle			= $deg*0.0174532925; # Degree -> Radians
 	my $x				= $r*sin($angle);
 	my $z				= $r*cos($angle);
@@ -910,17 +907,14 @@ sub build_hand
 	my $zstr			= sprintf("%.5f", $z);
 	my $rotstr			= sprintf("%.5f", $z);
 	my $hand_placement	= "";
-	$hand_placement		= $xstr."*cm 0*cm ".$zstr."*cm";
+	$hand_placement	= $xstr."*cm 0*cm ".$zstr."*cm";
 	my $hand_rotation	= "0*deg ".$rot."*deg 0*deg";
-	my $hand_sens		= "ctof";
-	my $hand_hitproc	= "ctof";
-#	my $hand_hitproc	= "flux";
 
 	if($magfield == "1.1759")
 	{
 		$deg			= 71.0-$rhrsAngle;
 		$rot			= -$deg;
-		$r				= 400;
+		$r				= 600;
 		$angle			= $deg*0.0174532925; # Degree -> Radians
 		$x				= $r*sin($angle);
 		$z				= $r*cos($angle);
@@ -952,7 +946,7 @@ sub build_hand
 	{
 		$deg			= 54.0-$rhrsAngle;
 		$rot			= -$deg;
-		$r				= 800;
+		$r				= 600;
 		$angle			= $deg*0.0174532925; # Degree -> Radians
 		$x				= $r*sin($angle);
 		$z				= $r*cos($angle);
@@ -999,14 +993,13 @@ sub build_hand
 #	$handscint{"material"}    = "$handmat";
 #	$handscint{"visible"}     = 1;
 #	$handscint{"style"}       = 1;
-#	$handscint{"sensitivity"} = "$hand_hitproc";
-#	$handscint{"hit_type"} 	  = "$hand_hitproc";
-#	$handscint{"identifiers"} = "paddle manual 400";
+#	$handscint{"sensitivity"} = "flux";
+#	$handscint{"hit_type"} 	  = "flux";
+#	$handscint{"identifiers"} = "id manual 400";
 #	print_det(\%configuration, \%handscint);
 
 	# Making HAND plane 1
 	my $idnum = 4101;
-	my $idPlaneNum = 4100;
 	my $ypos = 145;
 	my $color = "0000FF";
 	my %handp1 = init_det();
@@ -1014,7 +1007,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "0000FF";}
 		else {$color = "0080FF";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp1{"name"}			= "hand_p1_b$bar";
 		$handp1{"mother"}		= "hand";
 		$handp1{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1028,23 +1020,22 @@ sub build_hand
 		$handp1{"material"}		= "$handmat";
 		$handp1{"visible"}		= 1;
 		$handp1{"style"}		= 1;
-		$handp1{"sensitivity"}	= "$hand_sens";
-		$handp1{"hit_type"}		= "$hand_hitproc";
-		$handp1{"identifiers"}	= "paddle manual $idnum";
+		$handp1{"sensitivity"}	= "flux";
+		$handp1{"hit_type"}		= "flux";
+		$handp1{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp1);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 10;
 	}
 
 	# Making HAND plane 2
 	$idnum = 4201;
-	$idPlaneNum = 4200;
 	$ypos = 143.75;
 	my %handp2 = init_det();
 	for (my $bar=0; $bar<24; $bar++)
 	{
 		if ($bar%2==0) {$color = "00FFFF";}
 		else {$color = "A9F5F2";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp2{"name"}			= "hand_p2_b$bar";
 		$handp2{"mother"}		= "hand";
 		$handp2{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1058,23 +1049,22 @@ sub build_hand
 		$handp2{"material"}		= "$handmat";
 		$handp2{"visible"}		= 1;
 		$handp2{"style"}		= 1;
-		$handp2{"sensitivity"}	= "$hand_sens";
-		$handp2{"hit_type"}		= "$hand_hitproc";
-		$handp2{"identifiers"}	= "paddle manual $idnum";
+		$handp2{"sensitivity"}	= "flux";
+		$handp2{"hit_type"}		= "flux";
+		$handp2{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp2);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 12.5;
 	}
 
 	# Making HAND plane 3
 	$idnum = 4301;
-	$idPlaneNum = 4300;
 	$ypos = 142.5;
 	my %handp3 = init_det();
 	for (my $bar=0; $bar<6; $bar++)
 	{
 		if ($bar%2==0) {$color = "FF0000";}
 		else {$color = "FF0080";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp3{"name"}			= "hand_p3_b$bar";
 		$handp3{"mother"}		= "hand";
 		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1088,10 +1078,11 @@ sub build_hand
 		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
-		$handp3{"sensitivity"}	= "$hand_sens";
-		$handp3{"hit_type"}		= "$hand_hitproc";
-		$handp3{"identifiers"}	= "paddle manual $idnum";
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 15;
 	}
 	$ypos = 53.75;
@@ -1099,7 +1090,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "00FFFF";}
 		else {$color = "A9F5F2";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp3{"name"}			= "hand_p3_b$bar";
 		$handp3{"mother"}		= "hand";
 		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1113,10 +1103,11 @@ sub build_hand
 		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
-		$handp3{"sensitivity"}	= "$hand_sens";
-		$handp3{"hit_type"}		= "$hand_hitproc";
-		$handp3{"identifiers"}	= "paddle manual $idnum";
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 12.5;
 	}
 	$ypos = 5;
@@ -1124,7 +1115,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "0000FF";}
 		else {$color = "0080FF";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp3{"name"}			= "hand_p3_b$bar";
 		$handp3{"mother"}		= "hand";
 		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1138,10 +1128,11 @@ sub build_hand
 		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
-		$handp3{"sensitivity"}	= "$hand_sens";
-		$handp3{"hit_type"}		= "$hand_hitproc";
-		$handp3{"identifiers"}	= "paddle manual $idnum";
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 10;
 	}
 	$ypos = -16.25;
@@ -1149,7 +1140,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "00FFFF";}
 		else {$color = "A9F5F2";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp3{"name"}			= "hand_p3_b$bar";
 		$handp3{"mother"}		= "hand";
 		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1163,10 +1153,11 @@ sub build_hand
 		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
-		$handp3{"sensitivity"}	= "$hand_sens";
-		$handp3{"hit_type"}		= "$hand_hitproc";
-		$handp3{"identifiers"}	= "paddle manual $idnum";
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 12.5;
 	}
 	$ypos = -67.5;
@@ -1174,7 +1165,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "FF0000";}
 		else {$color = "FF0080";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp3{"name"}			= "hand_p3_b$bar";
 		$handp3{"mother"}		= "hand";
 		$handp3{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1188,23 +1178,22 @@ sub build_hand
 		$handp3{"material"}		= "$handmat";
 		$handp3{"visible"}		= 1;
 		$handp3{"style"}		= 1;
-		$handp3{"sensitivity"}	= "$hand_sens";
-		$handp3{"hit_type"}		= "$hand_hitproc";
-		$handp3{"identifiers"}	= "paddle manual $idnum";
+		$handp3{"sensitivity"}	= "flux";
+		$handp3{"hit_type"}		= "flux";
+		$handp3{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp3);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 15;
 	}
 
 	# Making HAND plane 4
 	$idnum = 4401;
-	$idPlaneNum = 4400;
 	$ypos = 137.5;
 	my %handp4 = init_det();
 	for (my $bar=0; $bar<12; $bar++)
 	{
 		if ($bar%2==0) {$color = "00FF00";}
 		else {$color = "80FF00";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp4{"name"}			= "hand_p4_b$bar";
 		$handp4{"mother"}		= "hand";
 		$handp4{"description"}	= "Hall A Neutron Detector, Plane 1 Bar $bar";
@@ -1218,24 +1207,23 @@ sub build_hand
 		$handp4{"material"}		= "$handmat";
 		$handp4{"visible"}		= 1;
 		$handp4{"style"}		= 1;
-		$handp4{"sensitivity"}	= "$hand_sens";
-		$handp4{"hit_type"}		= "$hand_hitproc";
-		$handp4{"identifiers"}	= "paddle manual $idnum";
+		$handp4{"sensitivity"}	= "flux";
+		$handp4{"hit_type"}		= "flux";
+		$handp4{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp4);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 25;
 	}
 
 
 	# Making HAND veto layer (p0)
 	$idnum = 4001;
-	$idPlaneNum = 4000;
 	$ypos = 144.5;
 	my %handp0 = init_det();
 	for (my $bar=0; $bar<10; $bar++)
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1249,10 +1237,11 @@ sub build_hand
 		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
-		$handp0{"sensitivity"} 	= "$hand_sens";
-		$handp0{"hit_type"} 	= "$hand_hitproc";
-		$handp0{"identifiers"}	= "paddle manual $idnum";
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 11;
 	}
 	$ypos = 60.5;
@@ -1260,7 +1249,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1274,10 +1262,11 @@ sub build_hand
 		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
-		$handp0{"sensitivity"} 	= "$hand_sens";
-		$handp0{"hit_type"} 	= "$hand_hitproc";
-		$handp0{"identifiers"}	= "paddle manual $idnum";
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 11;
 	}
 	$ypos = -45.5;
@@ -1285,7 +1274,6 @@ sub build_hand
 	{
 		if ($bar%2==0) {$color = "FF00FF";}
 		else {$color = "F781F3";}
-		$idnum = $idPlaneNum + $bar + 1;
 		$handp0{"name"}			= "hand_p0_b$bar";
 		$handp0{"mother"}		= "hand";
 		$handp0{"description"} 	= "Hall A Neutron Detector, Veto Bar $bar";
@@ -1299,10 +1287,11 @@ sub build_hand
 		$handp0{"material"} 	= "$handmat";
 		$handp0{"visible"} 		= 1;
 		$handp0{"style"} 		= 1;
-		$handp0{"sensitivity"} 	= "$hand_sens";
-		$handp0{"hit_type"} 	= "$hand_hitproc";
-		$handp0{"identifiers"}	= "paddle manual $idnum";
+		$handp0{"sensitivity"} 	= "flux";
+		$handp0{"hit_type"} 	= "flux";
+		$handp0{"identifiers"}	= "id manual $idnum";
 		print_det(\%configuration, \%handp0);
+		$idnum = $idnum + $bar;
 		$ypos = $ypos - 11;
 	}
 }
@@ -1386,8 +1375,7 @@ build_hall();
 #build_simple_hand();
 build_hand();
 build_pbwall();
-build_rhrs();
-build_eleShieldHouse();
+#build_rhrs();
+#build_eleShieldHouse();
 #build_eleDetector();
 #build_3he_target();
-printf "^^^^^^^^^^^^^^^^^^^^^^^^^ geometry.pl ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n";
